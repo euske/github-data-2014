@@ -1,6 +1,8 @@
 GitHub Data Challenge 2014 Entry
 ================================
 
+https://github.com/blog/1864-third-annual-github-data-challenge
+
 Data We Used
 ------------
 
