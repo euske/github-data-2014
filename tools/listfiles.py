@@ -12,6 +12,7 @@ def main(argv):
                 name = info.filename.encode('ascii')
             except UnicodeError:
                 continue
+            if ' ' in name: continue
             (_,ext) = os.path.splitext(name)
             if ext in ('.c', '.py', '.java'):
                 print ext[1:], path, info.file_size, name

@@ -1154,7 +1154,6 @@ py matplotlib-matplotlib-master.zip 1532 matplotlib-master/doc/mpl_toolkits/axes
 py webpy-webpy-master.zip 8140 webpy-master/docs/conf.py
 py matplotlib-matplotlib-master.zip 2880 matplotlib-master/examples/event_handling/viewlims.py
 py JetBrains-intellij-community-master.zip 11938 intellij-community-master/python/helpers/pydev/pydevd_file_utils.py
-py somerandomdude-Iconic-master.zip 2453 Iconic-master/scripts/font creation/iconic_uni.py
 py AppScale-appscale-master.zip 1089 appscale-master/AppServer/lib/django-1.5/django/conf/locale/pl/formats.py
 py Valloric-YouCompleteMe-master.zip 5534 YouCompleteMe-master/python/ycm/syntax_parse.py
 py AppScale-appscale-master.zip 1982 appscale-master/AppServer/lib/django-1.4/django/core/files/images.py
@@ -1459,7 +1458,6 @@ py AppScale-appscale-master.zip 1847 appscale-master/AppServer/lib/django-1.2/dj
 py ipython-ipython-master.zip 22617 ipython-master/IPython/extensions/rmagic.py
 py JetBrains-intellij-community-master.zip 1651 intellij-community-master/python/testData/inspections/PyShadowingNamesInspection/test.py
 py numenta-nupic-master.zip 3412 nupic-master/tests/unit/py2/nupic/encoders/multi_test.py
-py ipython-ipython-master.zip 1187 ipython-master/examples/Parallel Computing/rmt/rmtkernel.py
 py AppScale-appscale-master.zip 11449 appscale-master/AppServer/google/appengine/api/files/gs.py
 py SublimeCodeIntel-SublimeCodeIntel-master.zip 47307 SublimeCodeIntel-master/libs/chardet/jisfreq.py
 py JetBrains-intellij-community-master.zip 15620 intellij-community-master/python/lib/Lib/site-packages/django/utils/simplejson/encoder.py
@@ -1947,7 +1945,6 @@ py scrapinghub-portia-master.zip 3218 portia-master/slybot/slybot/tests/test_bas
 py Eugeny-ajenti-master.zip 2136 ajenti-master/ajenti/ui/__init__.py
 py AppScale-appscale-master.zip 5515 appscale-master/AppServer/lib/django-1.4/django/contrib/auth/tests/context_processors.py
 py dropbox-pyston-master.zip 37597 pyston-master/lib_python/2.7/plat-mac/FrameWork.py
-py ipython-ipython-master.zip 2937 ipython-master/examples/Parallel Computing/fetchparse.py
 py torchbox-wagtail-master.zip 1002 wagtail-master/wagtail/tests/wagtail_hooks.py
 py django-django-master.zip 3920 django-master/django/contrib/gis/geos/tests/test_io.py
 py AppScale-appscale-master.zip 1826 appscale-master/AppServer/lib/django-1.5/django/contrib/localflavor/au/forms.py
@@ -2660,7 +2657,6 @@ py numpy-numpy-master.zip 29673 numpy-master/numpy/lib/tests/test_format.py
 py kivy-kivy-master.zip 2268 kivy-master/examples/widgets/customcollide.py
 py linuxmint-Cinnamon-master.zip 2410 Cinnamon-master/files/usr/lib/cinnamon-screensaver-lock-dialog/cinnamon-screensaver-lock-dialog.py
 py JetBrains-intellij-community-master.zip 2761 intellij-community-master/python/lib/Lib/site-packages/django/contrib/localflavor/no/forms.py
-py ipython-ipython-master.zip 1147 ipython-master/examples/Parallel Computing/workflow/wmanager.py
 py JetBrains-intellij-community-master.zip 1261 intellij-community-master/python/lib/Lib/site-packages/django/core/management/commands/dbshell.py
 py tornadoweb-tornado-master.zip 31173 tornado-master/tornado/template.py
 py rg3-youtube-dl-master.zip 2622 youtube-dl-master/youtube_dl/extractor/myspass.py
@@ -2887,7 +2883,6 @@ py boto-boto-develop.zip 5221 boto-develop/tests/unit/ec2/test_instancetype.py
 py torchbox-wagtail-master.zip 7947 wagtail-master/wagtail/wagtailimages/views/images.py
 py AppScale-appscale-master.zip 11500 appscale-master/AppDB/blobstore/blobstore_server.py
 py AppScale-appscale-master.zip 2234 appscale-master/AppServer/lib/django-1.2/tests/modeltests/m2m_through/models.py
-py ipython-ipython-master.zip 2754 ipython-master/examples/Parallel Computing/interengine/communicator.py
 py kripken-emscripten-master.zip 1530 emscripten-master/third_party/ply/test/yacc_badprec3.py
 py JetBrains-intellij-community-master.zip 3722 intellij-community-master/python/helpers/docutils/parsers/rst/languages/eo.py
 py joke2k-faker-master.zip 4491 faker-master/faker/providers/internet.py
@@ -3551,7 +3546,6 @@ py SublimeCodeIntel-SublimeCodeIntel-master.zip 28696 SublimeCodeIntel-master/li
 py AppScale-appscale-master.zip 27482 appscale-master/AppServer/lib/django-1.4/tests/regressiontests/staticfiles_tests/tests.py
 py boto-boto-develop.zip 23510 boto-develop/boto/ec2/instance.py
 py scikit-learn-scikit-learn-master.zip 7532 scikit-learn-master/sklearn/linear_model/tests/test_omp.py
-py ipython-ipython-master.zip 3009 ipython-master/examples/IPython Kernel/gui/gui-wx.py
 py sqlmapproject-sqlmap-master.zip 25898 sqlmap-master/lib/core/settings.py
 py JetBrains-intellij-community-master.zip 32263 intellij-community-master/python/helpers/pycharm_generator_utils/constants.py
 py linuxmint-Cinnamon-master.zip 22985 Cinnamon-master/files/usr/lib/cinnamon-settings/cinnamon-settings.py
@@ -4133,7 +4127,6 @@ py thumbor-thumbor-master.zip 4576 thumbor-master/vows/point_vows.py
 py celery-celery-master.zip 3303 celery-master/celery/events/dumper.py
 py scrapy-scrapy-master.zip 1136 scrapy-master/extras/makedeb.py
 py klen-python-mode-develop.zip 5836 python-mode-develop/pymode/libs3/rope/refactor/wildcards.py
-py ipython-ipython-master.zip 2055 ipython-master/examples/Parallel Computing/daVinci Word Count/wordfreq.py
 py AppScale-appscale-master.zip 5338 appscale-master/AppServer/lib/django-1.4/tests/regressiontests/views/generic_urls.py
 py AppScale-appscale-master.zip 19469 appscale-master/AppServer/google/appengine/tools/devappserver2/application_configuration.py
 py aws-aws-cli-develop.zip 6727 aws-cli-develop/awscli/customizations/emr/applicationutils.py
@@ -4153,7 +4146,6 @@ py andymccurdy-redis-py-master.zip 1224 redis-py-master/redis/exceptions.py
 py sqlmapproject-sqlmap-master.zip 1122 sqlmap-master/tamper/randomcomments.py
 py scikit-learn-scikit-learn-master.zip 1521 scikit-learn-master/sklearn/tests/test_lda.py
 py numenta-nupic-master.zip 1757 nupic-master/tests/unit/py2/nupic/math/cast_mode_test.py
-py ipython-ipython-master.zip 1998 ipython-master/examples/Parallel Computing/wave2D/communicator.py
 py pagekite-Mailpile-master.zip 13271 Mailpile-master/scripts/mailpile-test.py
 py stephenmcd-mezzanine-master.zip 5838 mezzanine-master/mezzanine/template/loader_tags.py
 py aws-aws-cli-develop.zip 1561 aws-cli-develop/awscli/__init__.py
@@ -5163,7 +5155,6 @@ py JetBrains-intellij-community-master.zip 6232 intellij-community-master/python
 py AppScale-appscale-master.zip 8377 appscale-master/AppServer/lib/django-1.3/docs/_ext/djangodocs.py
 py aws-aws-cli-develop.zip 1138 aws-cli-develop/tests/unit/ec2/test_describe_instance_attribute.py
 py dropbox-pyston-master.zip 7763 pyston-master/lib_python/2.7/compileall.py
-py ipython-ipython-master.zip 1896 ipython-master/examples/Parallel Computing/pi/parallelpi.py
 py dropbox-pyston-master.zip 7145 pyston-master/lib_python/2.7/abc.py
 py toastdriven-django-tastypie-master.zip 1991 django-tastypie-master/tastypie/models.py
 py AppScale-appscale-master.zip 1938 appscale-master/AppServer/lib/django-1.3/tests/modeltests/m2m_and_m2o/tests.py
@@ -5820,7 +5811,6 @@ py ipython-ipython-master.zip 12205 ipython-master/IPython/parallel/tests/test_a
 py AppScale-appscale-master.zip 1804 appscale-master/AppServer/lib/django-1.3/django/contrib/gis/db/models/sql/aggregates.py
 py tornadoweb-tornado-master.zip 2632 tornado-master/tornado/platform/select.py
 py JetBrains-intellij-community-master.zip 4296 intellij-community-master/python/lib/Lib/repr.py
-py somerandomdude-Iconic-master.zip 7369 Iconic-master/scripts/vector creation/scour-0.26/svg_transform.py
 py contiki-os-contiki-master.zip 2055 contiki-master/tools/sky/serial/serialutil.py
 py matplotlib-matplotlib-master.zip 1455 matplotlib-master/examples/showcase/xkcd.py
 py AppScale-appscale-master.zip 3602 appscale-master/AppServer/lib/grizzled/grizzled/net/__init__.py
@@ -6789,7 +6779,6 @@ py imatix-zguide-master.zip 1713 zguide-master/examples/Python/dechat.py
 py sloria-TextBlob-dev.zip 1518 TextBlob-dev/textblob/nltk/stem/wordnet.py
 py django-django-old-master.zip 1592 django-old-master/tests/modeltests/test_client/urls.py
 py django-django-master.zip 1012 django-master/tests/ordering/models.py
-py somerandomdude-Iconic-master.zip 10627 Iconic-master/scripts/vector creation/scour-0.26/svg_regex.py
 py fogleman-Minecraft-master.zip 29839 Minecraft-master/main.py
 py matplotlib-matplotlib-master.zip 49589 matplotlib-master/lib/matplotlib/image.py
 py AppScale-appscale-master.zip 1788 appscale-master/AppServer/lib/django-1.5/django/core/files/locks.py
@@ -7442,7 +7431,6 @@ py pagekite-Mailpile-master.zip 56870 Mailpile-master/mailpile/mailutils.py
 py getsentry-sentry-master.zip 1155 sentry-master/src/sentry/nodestore/cassandra/backend.py
 py saltstack-salt-develop.zip 2080 salt-develop/salt/daemons/test/test_master.py
 py AppScale-appscale-master.zip 8041 appscale-master/AppServer/lib/django-1.4/django/utils/jslex.py
-py ipython-ipython-master.zip 2312 ipython-master/examples/Parallel Computing/itermapresult.py
 py AppScale-appscale-master.zip 38975 appscale-master/AppServer/lib/django-1.3/tests/regressiontests/forms/tests/input_formats.py
 py getsentry-sentry-master.zip 1627 sentry-master/tests/sentry/buffer/base/tests.py
 py stephenmcd-mezzanine-master.zip 1965 mezzanine-master/mezzanine/blog/urls.py
@@ -7929,7 +7917,6 @@ py linuxmint-Cinnamon-master.zip 1612 Cinnamon-master/files/usr/lib/cinnamon-set
 py scikit-learn-scikit-learn-master.zip 21070 scikit-learn-master/sklearn/ensemble/tests/test_bagging.py
 py scrapy-scrapy-master.zip 2645 scrapy-master/scrapy/utils/signal.py
 py sampsyo-beets-master.zip 5267 beets-master/beetsplug/ftintitle.py
-py ipython-ipython-master.zip 3566 ipython-master/examples/Parallel Computing/dagdeps.py
 py django-django-old-master.zip 2698 django-old-master/django/utils/timesince.py
 py docopt-docopt-master.zip 2213 docopt-master/examples/config_file_example.py
 py rg3-youtube-dl-master.zip 1761 youtube-dl-master/youtube_dl/extractor/kankan.py
@@ -8329,7 +8316,6 @@ py liftoff-GateOne-master.zip 3032 GateOne-master/gateone/applications/terminal/
 py AppScale-appscale-master.zip 1302 appscale-master/AppServer/lib/django-1.2/django/contrib/messages/tests/urls.py
 py AppScale-appscale-master.zip 8190 appscale-master/AppServer/google/appengine/_internal/django/utils/html.py
 py stephenmcd-mezzanine-master.zip 5142 mezzanine-master/mezzanine/blog/management/commands/import_tumblr.py
-py ipython-ipython-master.zip 2618 ipython-master/examples/Parallel Computing/iopubwatcher.py
 py clips-pattern-master.zip 3270 pattern-master/examples/01-web/11-facebook.py
 py ipython-ipython-master.zip 11747 ipython-master/IPython/qt/console/history_console_widget.py
 py midgetspy-Sick-Beard-development.zip 13282 Sick-Beard-development/cherrypy/lib/httpauth.py
@@ -9997,4 +9983,3 @@ py AppScale-appscale-master.zip 4333 appscale-master/AppServer/lib/django-1.3/te
 py django-django-master.zip 3951 django-master/django/core/management/commands/shell.py
 py AppScale-appscale-master.zip 3518 appscale-master/AppServer/lib/django-1.4/django/contrib/localflavor/tr/forms.py
 py matplotlib-matplotlib-master.zip 15409 matplotlib-master/lib/matplotlib/patheffects.py
-py ipython-ipython-master.zip 1104 ipython-master/examples/IPython Kernel/ipython-get-history.py
