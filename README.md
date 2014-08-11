@@ -8,6 +8,7 @@ Data We Used
 
  * Pick the top 100 repositories (in terms of Stars) that are labelled as: C, Java and Python.
    (via GitHub Search API, cf. https://developer.github.com/v3/search/)
+   [Obtained at Aug. 8, 2014]
  * List all the files: (Caveats: We excluded non-ASCII filenames.)
    * C: 94637 files
    * Java: 33756 files
@@ -17,8 +18,8 @@ Data We Used
    * Java: 57MB in total
    * Python: 95MB in total
 
-Skewed Data
------------
+Data Skewness
+-------------
 
  * Many files in C are from the Linux kernel.
    (3611 files from torvalds/linux, 3336 files from raspberrypi/linux)
