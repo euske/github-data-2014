@@ -10,11 +10,20 @@ def issym(x): return isinstance(x, str) and x.startswith('.') and x
 def head(x): return islist(x) and issym(x[0])
 def tail(x): return islist(x) and x[1:]
 def walk(x):
-    for t in x:
-        if islist(t):
-            yield t
+    yield x
+    if islist(x):
+        for t in x:
             for y in walk(t):
                 yield y
+    return 
+def find(x, s):
+    for t in x:
+        if islist(t):
+            if head(t) == s:
+                yield t
+            else:
+                for y in find(t, s):
+                    yield y
     return
 
 def issingle(x):
@@ -28,8 +37,9 @@ def traverse_c(tree):
     if head(tree) == '.functionDefinition':
         for t in tail(tree):
             if head(t) == '.declarator':
+                #pp(t);print
                 r = []
-                for tt in walk(tail(t)):
+                for tt in walk(t):
                     if head(tt) == '.directDeclarator':
                         v = issym(tt[1])
                         if v:
@@ -41,27 +51,26 @@ def traverse_c(tree):
         for t in tail(tree):
             if head(t) == '.initDeclaratorList':
                 r = []
-                for tt in walk(tail(t)):
-                    if head(tt) == '.directDeclarator':
-                        v = issym(tt[1])
+                for tt in find(tail(t), '.directDeclarator'):
+                    v = issym(tt[1])
+                    if v:
                         print 'vardecl', v
             else:
                 traverse_c(t)
     elif head(tree) in ('.initializer', '.expression'):
-        for t in walk(tail(tree)):
-            if head(t) == '.postfixExpression':
-                if (3 <= len(t) and
-                    issingle(t[1]) and
-                    issym(t[2]) == '.('):
-                    v = issingle(t[1])
-                    r = [v]
-                    for x in t[3:-1]:
-                        v = issingle(x)
-                        if issym(v):
-                            r.append(v)
-                        else:
-                            r.append('*')
-                    print 'expr', ' '.join(r)
+        for t in find(tail(tree), '.postfixExpression'):
+            if (3 <= len(t) and
+                issingle(t[1]) and
+                issym(t[2]) == '.('):
+                v = issingle(t[1])
+                r = [v]
+                for x in find(t[3:-1], '.assignmentExpression'):
+                    v = issingle(x)
+                    if issym(v):
+                        r.append(v)
+                    else:
+                        r.append('*')
+                print 'expr', ' '.join(r)
     else:
         for t in tail(tree):
             traverse_c(t)
