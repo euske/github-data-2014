@@ -11,15 +11,18 @@ class SexprParser(object):
     def feed(self, s):
         i = 0
         while i < len(s):
-            i = self._parse(s, i)
+            i = self._parse(s[i], i)
         return
 
+    def close(self):
+        assert not self._stack
+        return self._expr
+
     def get(self):
-        assert len(self._expr) == 1
+        assert len(self._expr)
         return self._expr.pop()
 
-    def _parse_main(self, s, i):
-        c = s[i]
+    def _parse_main(self, c, i):
         if c == '(':
             self._parse = self._parse_paren0
             return i+1
@@ -40,8 +43,7 @@ class SexprParser(object):
             self._parse = self._parse_symbol
             return i+1
 
-    def _parse_paren0(self, s, i):
-        c = s[i]
+    def _parse_paren0(self, c, i):
         if c == ' ':
             self._symbol = '('
             self._expr.append('.'+self._symbol)
@@ -53,8 +55,7 @@ class SexprParser(object):
             self._parse = self._parse_main
             return i
 
-    def _parse_space(self, s, i):
-        c = s[i]
+    def _parse_space(self, c, i):
         if c == ')':
             self._symbol = ')'
             self._expr.append('.'+self._symbol)
@@ -64,8 +65,7 @@ class SexprParser(object):
             self._parse = self._parse_main
             return i
 
-    def _parse_symbol(self, s, i):
-        c = s[i]
+    def _parse_symbol(self, c, i):
         if c == ')':
             self._expr.append('.'+self._symbol)
             self._parse = self._parse_main
@@ -78,8 +78,7 @@ class SexprParser(object):
             self._symbol += c
             return i+1
     
-    def _parse_string(self, s, i):
-        c = s[i]
+    def _parse_string(self, c, i):
         if c == '"':
             self._expr.append('@'+self._string)
             self._parse = self._parse_main
@@ -91,8 +90,14 @@ class SexprParser(object):
             self._string += c
             return i+1
 
-    def _parse_string_b(self, s, i):
-        c = s[i]
+    def _parse_string_b(self, c, i):
         self._string += c
         self._parse = self._parse_string
         return i+1
+
+if __name__ == '__main__':
+    import fileinput
+    parser = SexprParser()
+    for line in fileinput.input():
+        parser.feed(line.strip())
+    print parser.close()
