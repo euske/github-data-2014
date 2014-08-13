@@ -38,7 +38,7 @@ def main(argv):
             sys.stderr.flush()
             data = zf.read(name)
             tree = parse_c(data)
-            out.writestr(name, tree)
+            out.writestr(name+'.tree', tree)
         zf.close()
     out.close()
     return 0
