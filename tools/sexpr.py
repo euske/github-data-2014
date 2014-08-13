@@ -11,6 +11,7 @@ class SexprParser(object):
     def feed(self, s):
         i = 0
         while i < len(s):
+            #print s[i], self._parse
             i = self._parse(s[i], i)
         return
 
@@ -24,7 +25,8 @@ class SexprParser(object):
 
     def _parse_main(self, c, i):
         if c == '(':
-            self._parse = self._parse_paren0
+            self._stack.append(self._expr)
+            self._expr = []
             return i+1
         elif c == ')':
             assert self._stack
@@ -43,25 +45,28 @@ class SexprParser(object):
             self._parse = self._parse_symbol
             return i+1
 
-    def _parse_paren0(self, c, i):
-        if c == ' ':
-            self._symbol = '('
-            self._expr.append('.'+self._symbol)
-            self._parse = self._parse_main
-            return i+1
-        else:
-            self._stack.append(self._expr)
-            self._expr = []
-            self._parse = self._parse_main
-            return i
-
     def _parse_space(self, c, i):
-        if c == ')':
+        if c == '(':
+            self._parse = self._parse_paren0
+            return i+1
+        elif c == ')':
             self._symbol = ')'
             self._expr.append('.'+self._symbol)
             self._parse = self._parse_main
             return i+1
         else:
+            self._parse = self._parse_main
+            return i
+
+    def _parse_paren0(self, c, i):
+        if c == ' ':
+            self._symbol = '('
+            self._expr.append('.'+self._symbol)
+            self._parse = self._parse_space
+            return i+1
+        else:
+            self._stack.append(self._expr)
+            self._expr = []
             self._parse = self._parse_main
             return i
 
@@ -72,7 +77,7 @@ class SexprParser(object):
             return i
         elif c == ' ':
             self._expr.append('.'+self._symbol)
-            self._parse = self._parse_main
+            self._parse = self._parse_space
             return i+1
         else:
             self._symbol += c
