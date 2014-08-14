@@ -6,12 +6,10 @@ import subprocess
 
 os.environ['CLASSPATH'] = '/usr/share/java/antlr-complete.jar:.'
 
-def parse_c(data):
-    lines = data.splitlines()
+def parse_java(data):
     proc = subprocess.Popen(['grun','Java','compilationUnit','-tree'],
                             stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-    for line in lines:
-        proc.stdin.write(line)
+    proc.stdin.write(data)
     proc.stdin.close()
     data = proc.stdout.read()
     proc.stdout.close()
@@ -27,7 +25,7 @@ def main(argv):
             sys.stderr.write('parsing: %r\n' % name)
             sys.stderr.flush()
             data = zf.read(name)
-            tree = parse_c(data)
+            tree = parse_java(data)
             out.writestr(name+'.tree', tree)
         zf.close()
     out.close()

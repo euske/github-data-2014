@@ -11,12 +11,12 @@ class SexprParser(object):
     def feed(self, s):
         i = 0
         while i < len(s):
-            #print s[i], self._parse
+            #print i, s[i], self._parse
             i = self._parse(s[i], i)
         return
 
     def close(self):
-        assert not self._stack
+        #assert not self._stack, self._stack
         return self._expr
 
     def get(self):
