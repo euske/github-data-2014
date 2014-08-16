@@ -23,15 +23,22 @@ class SexprParser(object):
         assert len(self._expr)
         return self._expr.pop()
 
+    def _add_symbol(self, symbol):
+        #print 'add', symbol
+        self._expr.append('.'+symbol)
+        return
+
     def _parse_main(self, c, i):
         if c == '(':
             self._stack.append(self._expr)
+            #print 'open', len(self._stack)
             self._expr = []
             return i+1
         elif c == ')':
             assert self._stack
             self._stack[-1].append(self._expr)
             self._expr = self._stack.pop()
+            #print 'close', len(self._stack)
             return i+1
         elif c == ' ':
             self._parse = self._parse_space
@@ -50,8 +57,7 @@ class SexprParser(object):
             self._parse = self._parse_paren0
             return i+1
         elif c == ')':
-            self._symbol = ')'
-            self._expr.append('.'+self._symbol)
+            self._add_symbol(')')
             self._parse = self._parse_main
             return i+1
         else:
@@ -60,23 +66,23 @@ class SexprParser(object):
 
     def _parse_paren0(self, c, i):
         if c == ' ':
-            self._symbol = '('
-            self._expr.append('.'+self._symbol)
+            self._add_symbol('(')
             self._parse = self._parse_space
             return i+1
         else:
             self._stack.append(self._expr)
+            #print 'open', len(self._stack)
             self._expr = []
             self._parse = self._parse_main
             return i
 
     def _parse_symbol(self, c, i):
         if c == ')':
-            self._expr.append('.'+self._symbol)
+            self._add_symbol(self._symbol)
             self._parse = self._parse_main
             return i
         elif c == ' ':
-            self._expr.append('.'+self._symbol)
+            self._add_symbol(self._symbol)
             self._parse = self._parse_space
             return i+1
         else:
