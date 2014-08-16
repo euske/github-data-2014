@@ -26,10 +26,14 @@ def find(x, s):
                     yield y
     return
 
-def issingle(x):
+def getname(x):
     while islist(x):
-        if len(x) != 2: return None
-        x = x[1]
+        if head(x) == '.postfixExpression' and len(x) == 4:
+            x = x[-1]
+        elif len(x) == 2:
+            x = x[1]
+        else:
+            return None
     return x
 
 def traverse_c(tree):
@@ -37,7 +41,6 @@ def traverse_c(tree):
     if head(tree) == '.functionDefinition':
         for t in tail(tree):
             if head(t) == '.declarator':
-                #pp(t);print
                 r = []
                 for tt in walk(t):
                     if head(tt) == '.directDeclarator':
@@ -50,27 +53,27 @@ def traverse_c(tree):
     elif head(tree) == '.declaration':
         for t in tail(tree):
             if head(t) == '.initDeclaratorList':
-                r = []
-                for tt in find(tail(t), '.directDeclarator'):
-                    v = issym(tt[1])
-                    if v:
-                        print 'vardecl', v
+                for tt in walk(t):
+                    if head(tt) == '.directDeclarator':
+                        v = issym(tt[1])
+                        if v and v != '.(':
+                            print 'vardecl', v
             else:
                 traverse_c(t)
     elif head(tree) in ('.initializer', '.expression'):
         for t in find(tail(tree), '.postfixExpression'):
             if (3 <= len(t) and
-                issingle(t[1]) and
+                getname(t[1]) and
                 issym(t[2]) == '.('):
-                v = issingle(t[1])
+                v = getname(t[1])
                 r = [v]
                 for x in find(t[3:-1], '.assignmentExpression'):
-                    v = issingle(x)
-                    if issym(v):
+                    v = getname(x)
+                    if v:
                         r.append(v)
                     else:
                         r.append('*')
-                print 'expr', ' '.join(r)
+                print 'funcall', ' '.join(r)
     else:
         for t in tail(tree):
             traverse_c(t)

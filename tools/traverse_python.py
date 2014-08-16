@@ -14,7 +14,7 @@ def register_class(name):
     print 'typedecl', name
     return
 def funcall(name, args):
-    print 'expr', name, ' '.join( arg or '*' for arg in args )
+    print 'funcall', name, ' '.join( arg or '*' for arg in args )
     return
 
 def getname(tree):
