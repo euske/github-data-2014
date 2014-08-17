@@ -4,11 +4,20 @@ import zipfile
 import compiler
 from compiler import ast
 
+def flatten(seq):
+    r = []
+    for x in seq:
+        if isinstance(x, tuple):
+            r.extend(flatten(x))
+        else:
+            r.append(x)
+    return r
+
 def register_var(name):
     print 'vardecl', name
     return
 def register_func(name, args):
-    print 'funcdecl', name, ' '.join(args)
+    print 'funcdecl', name, ' '.join(flatten(args))
     return
 def register_class(name):
     print 'typedecl', name
