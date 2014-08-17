@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
-import fileinput
+sys.setrecursionlimit(10000)
+import zipfile
 from sexpr import SexprParser
 from pp import pp
 
@@ -36,30 +37,32 @@ def getname(x):
             return None
     return x
 
-def traverse_c(tree):
+def traverse(tree):
     if not islist(tree): return
     if head(tree) == '.functionDefinition':
         for t in tail(tree):
             if head(t) == '.declarator':
                 r = []
-                for tt in walk(t):
-                    if head(tt) == '.directDeclarator':
-                        v = issym(tt[1])
-                        if v:
-                            r.append(v)
+                for tt in find(tail(t), '.directDeclarator'):
+                    for tt in walk(tt):
+                        if head(tt) == '.directDeclarator':
+                            v = issym(tt[1])
+                            if v:
+                                r.append(v)
                 print 'funcdecl', ' '.join(r)
             else:
-                traverse_c(t)
+                traverse(t)
     elif head(tree) == '.declaration':
         for t in tail(tree):
             if head(t) == '.initDeclaratorList':
-                for tt in walk(t):
-                    if head(tt) == '.directDeclarator':
-                        v = issym(tt[1])
-                        if v and v != '.(':
-                            print 'vardecl', v
+                for tt in find(tail(t), '.directDeclarator'):
+                    for tt in walk(tt):
+                        if head(tt) == '.directDeclarator':
+                            v = issym(tt[1])
+                            if v and v != '.(':
+                                print 'vardecl', v
             else:
-                traverse_c(t)
+                traverse(t)
     elif head(tree) in ('.initializer', '.expression'):
         for t in find(tail(tree), '.postfixExpression'):
             if (3 <= len(t) and
@@ -76,15 +79,39 @@ def traverse_c(tree):
                 print 'funcall', ' '.join(r)
     else:
         for t in tail(tree):
-            traverse_c(t)
+            traverse(t)
     return
 
 def main(argv):
-    for line in fileinput.input():
-        parser = SexprParser()
-        parser.feed(line.strip())
-        for tree in parser.close():
-            traverse_c(tree)
+    args = argv[1:]
+    for path in args:
+        if path.endswith('.zip'):
+            zf = zipfile.ZipFile(path)
+            for name in zf.namelist():
+                sys.stderr.write('parsing: %r\n' % name)
+                sys.stderr.flush()
+                data = zf.read(name)
+                try:
+                    parser = SexprParser()
+                    parser.feed(data)
+                    for tree in parser.close():
+                        traverse(tree)
+                except SyntaxError, e:
+                    print 'error:', name, e
+            zf.close()
+        else:
+            sys.stderr.write('parsing: %r\n' % path)
+            sys.stderr.flush()
+            fp = open(path, 'rb')
+            for line in fp:
+                try:
+                    parser = SexprParser()
+                    parser.feed(line)
+                    for tree in parser.close():
+                        traverse(tree)
+                except SyntaxError, e:
+                    print 'error:', path, e
+            fp.close()
     return 0
 
 if __name__ == '__main__': sys.exit(main(sys.argv))

@@ -35,10 +35,10 @@ class SexprParser(object):
             self._expr = []
             return i+1
         elif c == ')':
-            assert self._stack
-            self._stack[-1].append(self._expr)
-            self._expr = self._stack.pop()
-            #print 'close', len(self._stack)
+            if self._stack:
+                self._stack[-1].append(self._expr)
+                self._expr = self._stack.pop()
+                #print 'close', len(self._stack)
             return i+1
         elif c == ' ':
             self._parse = self._parse_space

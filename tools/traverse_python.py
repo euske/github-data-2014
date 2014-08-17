@@ -51,8 +51,7 @@ def traverse(tree):
     # class
     elif isinstance(tree, ast.Class):
         register_class(tree.name)
-        for base in tree.bases:
-            traverse(base)
+        traverse(tree.code)
     # assign
     elif isinstance(tree, ast.Assign):
         for node in tree.nodes:

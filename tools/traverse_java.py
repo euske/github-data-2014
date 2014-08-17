@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys
-import fileinput
+import zipfile
 from sexpr import SexprParser
 from pp import pp
 
@@ -35,9 +35,9 @@ def getname(tree):
     if head(tree) == '.primary' and len(tree) == 2:
         return issym(tree[1])
     elif head(tree) == '.primary' and len(tree) == 4 and tree[-2] == '..':
-        return tree[-1]
+        return issym(tree[-1])
     elif head(tree) == '.expression' and len(tree) == 4 and tree[-2] == '..':
-        return tree[-1]
+        return issym(tree[-1])
     elif head(tree) == '.expression' and len(tree) == 5 and tree[-2] == '.)':
         return getname(tree[-1])
     elif head(tree) == '.expression' and len(tree) == 2:
@@ -96,6 +96,13 @@ def traverse_var(tree, init=True):
                         traverse_expr(expr)
     return
 
+def traverse_body(tree):
+    for t in find(tree, '.variableDeclarators'):
+        traverse_var(t, init=False)
+    for expr in find(tree, '.expression'):
+        traverse_expr(expr)
+    return
+
 def traverse_func(tree):
     name = tree[2]
     args = []
@@ -111,39 +118,65 @@ def traverse_func(tree):
     print 'funcdecl', name, ' '.join(args)
     tree = find1(tail(tree), '.methodBody')
     if tree:
-        for t in find(tree, '.variableDeclarators'):
-            traverse_var(t, init=False)
-        for expr in find(tree, '.expression'):
-            traverse_expr(expr)
+        traverse_body(tree)
     return
 
 def traverse(tree):
     if not islist(tree): return
     if head(tree) == '.typeDeclaration':
         tree = find1(tail(tree), '.classDeclaration')
-        print 'typedecl', issym(tree[2])
-        tree = find1(tail(tree), '.classBody')
-        for t in tail(tree):
-            if head(t) == '.classBodyDeclaration':
-                t = find1(tail(t), '.memberDeclaration')
-                for tt in tail(t):
-                    if head(tt) == '.fieldDeclaration':
-                        tt = find1(tail(tt), '.variableDeclarators')
-                        if tt:
-                            traverse_var(tt)
-                    elif head(tt) == '.methodDeclaration':
-                        traverse_func(tt)
+        if tree:
+            print 'typedecl', issym(tree[2])
+            tree = find1(tail(tree), '.classBody')
+            if tree:
+                for t in tail(tree):
+                    if head(t) == '.classBodyDeclaration':
+                        for tt in tail(t):
+                            if head(tt) == '.memberDeclaration':
+                                for mem in tail(tt):
+                                    if head(mem) == '.fieldDeclaration':
+                                        mem = find1(tail(mem), '.variableDeclarators')
+                                        if mem:
+                                            traverse_var(mem)
+                                    elif head(mem) == '.methodDeclaration':
+                                        traverse_func(mem)
+                            elif head(tt) == '.block':
+                                traverse_body(tt)
     else:
         for t in tail(tree):
             traverse(t)
     return
 
 def main(argv):
-    for line in fileinput.input():
-        parser = SexprParser()
-        parser.feed(line.strip())
-        for tree in parser.close():
-            traverse(tree)
+    args = argv[1:]
+    for path in args:
+        if path.endswith('.zip'):
+            zf = zipfile.ZipFile(path)
+            for name in zf.namelist():
+                sys.stderr.write('parsing: %r\n' % name)
+                sys.stderr.flush()
+                data = zf.read(name)
+                try:
+                    parser = SexprParser()
+                    parser.feed(data)
+                    for tree in parser.close():
+                        traverse(tree)
+                except SyntaxError, e:
+                    print 'error:', name, e
+            zf.close()
+        else:
+            sys.stderr.write('parsing: %r\n' % path)
+            sys.stderr.flush()
+            fp = open(path, 'rb')
+            for line in fp:
+                try:
+                    parser = SexprParser()
+                    parser.feed(line)
+                    for tree in parser.close():
+                        traverse(tree)
+                except SyntaxError, e:
+                    print 'error:', path, e
+            fp.close()
     return 0
 
 if __name__ == '__main__': sys.exit(main(sys.argv))
