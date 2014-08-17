@@ -16,85 +16,123 @@ def walk(x):
             for y in walk(t):
                 yield y
     return 
-def find(x, *s):
+def find(x, s):
     for t in x:
         if islist(t):
-            if head(t) in s:
+            if head(t) == s:
                 yield t
             else:
-                for y in find(t, *s):
+                for y in find(t, s):
                     yield y
     return
+def find1(x, s):
+    if x:
+        for t in x:
+            if head(t) == s: return t
+    return None
 
 def getname(tree):
-    if head(tree) == '.primary':
+    if head(tree) == '.primary' and len(tree) == 2:
         return issym(tree[1])
+    elif head(tree) == '.primary' and len(tree) == 4 and tree[-2] == '..':
+        return tree[-1]
     elif head(tree) == '.expression' and len(tree) == 4 and tree[-2] == '..':
         return tree[-1]
+    elif head(tree) == '.expression' and len(tree) == 5 and tree[-2] == '.)':
+        return getname(tree[-1])
     elif head(tree) == '.expression' and len(tree) == 2:
         return getname(tree[1])
     else:
         return None
 
 def traverse_expr(tree):
-    for t in walk(tree):
-        if head(t) == '.expression' and 4 <= len(t) and t[2] == '.(':
-            v = getname(t[1])
-            if v:
-                r = []
-                for tt in find(tail(t), '.expressionList'):
-                    for ttt in find(tail(tt), '.expression'):
-                        vv = getname(ttt)
-                        if vv:
-                            r.append(vv)
-                        else:
-                            r.append(None)
-                print 'funcall', v, ' '.join( vv or '*' for vv in r )
-        elif head(t) == '.creator':
-            v = t[1][1]
-            if issym(v):
-                r = []
-                for tt in find(tail(t), '.expression'):
-                    vv = getname(tt)
-                    if vv:
-                        r.append(vv)
+    assert head(tree) == '.expression'
+    if 4 <= len(tree) and tree[2] == '.(':
+        name = getname(tree[1])
+        args = []
+        tree = find1(tail(tree), '.expressionList')
+        if tree:
+            for t in tree:
+                if head(t) == '.expression':
+                    v = getname(t)
+                    if v:
+                        args.append(v)
                     else:
-                        r.append(None)
-                print 'funcall', v, ' '.join( vv or '*' for vv in r )
+                        args.append(None)
+                    traverse_expr(t)
+        print 'funcall', name, ' '.join( v or '*' for v in args )
+    elif 3 <= len(tree) and tree[1] == '.new':
+        tree = find1(tail(tree), '.creator')
+        name = tree[1][1]
+        args = []
+        t = find1(tail(tree), '.classCreatorRest')
+        if t:
+            t = find1(tail(t), '.arguments')
+            t = find1(tail(t), '.expressionList')
+            if t:
+                for tt in find(tail(t), '.expression'):
+                    v = getname(tt)
+                    if v:
+                        args.append(v)
+                    else:
+                        args.append(None)
+                    traverse_expr(tt)
+        print 'funcall', name, ' '.join( v or '*' for v in args )
+    else:
+        for t in find(tail(tree), '.expression'):
+            traverse_expr(t)
     return
-    
+
+def traverse_var(tree, init=True):
+    for t in tail(tree):
+        if head(t) == '.variableDeclarator':
+            tt = find1(tail(t), '.variableDeclaratorId')
+            if tt:
+                print 'vardecl', issym(tt[1])
+            if init:
+                tt = find1(tail(t), '.variableInitializer')
+                if tt:
+                    for expr in find(tt, '.expression'):
+                        traverse_expr(expr)
+    return
+
+def traverse_func(tree):
+    name = tree[2]
+    args = []
+    t = find1(tail(tree), '.formalParameters')
+    if t:
+        t = find1(tail(t), '.formalParameterList')
+        if t:
+            for tt in t:
+                if head(tt) == '.formalParameter':
+                    ttt = find1(tail(tt), '.variableDeclaratorId')
+                    if ttt:
+                        args.append(issym(ttt[1]))
+    print 'funcdecl', name, ' '.join(args)
+    tree = find1(tail(tree), '.methodBody')
+    if tree:
+        for t in find(tree, '.variableDeclarators'):
+            traverse_var(t, init=False)
+        for expr in find(tree, '.expression'):
+            traverse_expr(expr)
+    return
+
 def traverse(tree):
     if not islist(tree): return
     if head(tree) == '.typeDeclaration':
-        for t in find(tail(tree), '.classDeclaration'):
-            v = issym(t[2])
-            if v:
-                print 'typedecl', v
-            for tt in walk(t):
-                if head(tt) == '.memberDeclaration':
-                    for ttt in find(tail(tt), '.variableDeclarator'):
-                        for tttt in find(tail(ttt), '.variableDeclaratorId'):
-                            v = issym(tttt[1])
-                            if v:
-                                print 'vardecl', v
-                        for tttt in find(tail(ttt), '.variableInitializer'):
-                            traverse_expr(tttt)
-                elif head(tt) == '.methodDeclaration':
-                    v = tt[2]
-                    if issym(v):
-                        r = []
-                        for ttt in find(tail(tt), '.variableDeclaratorId'):
-                            v = ttt[1]
-                            if issym(v):
-                                r.append(v)
-                        print 'funcdecl', v, ' '.join(r)
-                    for ttt in find(tail(tt), '.methodBody'):
-                        for tttt in find(tail(ttt), '.variableDeclarator'):
-                            for ttttt in find(tail(tttt), '.variableDeclaratorId'):
-                                v = issym(ttttt[1])
-                                if v:
-                                    print 'vardecl', v
-                        traverse_expr(ttt)
+        tree = find1(tail(tree), '.classDeclaration')
+        print 'typedecl', issym(tree[2])
+        tree = find1(tail(tree), '.classBody')
+        for t in tail(tree):
+            if head(t) == '.classBodyDeclaration':
+                t = find1(tail(t), '.memberDeclaration')
+                for tt in tail(t):
+                    if head(tt) == '.fieldDeclaration':
+                        tt = find1(tail(tt), '.variableDeclarators')
+                        if tt:
+                            traverse_var(tt)
+                    elif head(tt) == '.methodDeclaration':
+                        traverse_func(tt)
     else:
         for t in tail(tree):
             traverse(t)
