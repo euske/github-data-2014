@@ -36,4 +36,5 @@ Language Parsing
  * C Caveats: ANTLR4 cannot handle preprocessor directives,
    so we stripped out #defines and #includes from the code.
    After all, we're interested in a source code for human readers, not for compilers.
- * Python Caveats: Mixture of Python 2 and 3 code.
+ * Python Caveats: Mixture of Python 2 and 3 code. 
+   The compiler.ast module handles both pretty well.
