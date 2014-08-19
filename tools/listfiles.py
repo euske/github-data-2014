@@ -14,7 +14,9 @@ def main(argv):
                 continue
             if ' ' in name: continue
             (_,ext) = os.path.splitext(name)
-            if ext in ('.c', '.py', '.java'):
+            if ext in ('.c', '.h', '.py', '.java'):
+                if ext == '.h':
+                    ext = '.c'
                 print ext[1:], path, info.file_size, name
         zf.close()
     return 0
