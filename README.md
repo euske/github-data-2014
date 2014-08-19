@@ -10,13 +10,13 @@ Data We Used
    (via GitHub Search API, cf. https://developer.github.com/v3/search/)
    [Obtained at Aug. 8, 2014]
  * List all the files: (Caveats: We excluded non-ASCII filenames.)
-   * C: 94637 files (including header files)
-   * Java: 33756 files
-   * Python: 57807 files
- * Randomly pick 10000 files for each language that has reasonable file size. (1KB-100KB)
-   * C: 153MB in total
-   * Java: 57MB in total
-   * Python: 95MB in total
+   * C: 110,705 files (including header files)
+   * Java: 94,635 files
+   * Python: 33,710 files
+ * Randomly pick files for each language that has reasonable file size. (1KB-100KB)
+   * C: 7,381 files (80MB in total)
+   * Java: 7,764 files (53MB in total)
+   * Python: 5,872 files (56MB in total)
  * In order to mitigate the data skewness, 
    we limited the maximum number of files for each repository to 100.
 
