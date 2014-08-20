@@ -52,6 +52,33 @@ def traverse(tree):
                 print 'funcdecl', ' '.join(r)
             else:
                 traverse(t)
+    elif head(tree) == '.externalDeclaration':
+        for t in tail(tree):
+            if head(t) == '.declaration':
+                for tt in tail(t):
+                    if head(tt) == '.declarationSpecifiers':
+                        r = []
+                        typedef = False
+                        for ttt in tail(tt):
+                            if head(ttt) == '.declarationSpecifier':
+                                for tttt in tail(ttt):
+                                    if (head(tttt) == '.storageClassSpecifier' and
+                                        tttt[1] == '.typedef'):
+                                        typedef = True
+                                    elif head(tttt) == '.typeSpecifier':
+                                        r.append(tttt[1])
+                        if typedef and len(r) == 2 and head(r[-1]) == '.typedefName':
+                            print 'typedecl', r[-1][1]
+                    elif head(tt) == '.initDeclaratorList':
+                        r = []
+                        for tt in find(tail(t), '.directDeclarator'):
+                            for tt in walk(tt):
+                                if head(tt) == '.directDeclarator':
+                                    v = issym(tt[1])
+                                    if v:
+                                        r.append(v)
+                        print 'funcdecl', ' '.join(r)
+                
     elif head(tree) == '.declaration':
         for t in tail(tree):
             if head(t) == '.initDeclaratorList':
