@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# makestat.py
 import sys
 
 def chunk_name(name):
@@ -24,134 +23,115 @@ def chunk_name(name):
             u0 = False
     if w:
         r.append(w)
-    return r
+    return [ w.lower() for w in r if 2 <= len(w) ]
 
 assert chunk_name('thisisaword') == ['thisisaword']
-assert chunk_name('this_is_a_word') == ['this','is','a','word']
-assert chunk_name('WHOAREU') == ['WHOAREU']
-assert chunk_name('WHO_ARE_U') == ['WHO','ARE','U']
-assert chunk_name('XMLIsDerpy') == ['XML','Is','Derpy']
-assert chunk_name('fancyURLOpener') == ['fancy','URL','Opener']
+assert chunk_name('this_is_a_word') == ['this','is','word']
+assert chunk_name('WHOAREU') == ['whoareu']
+assert chunk_name('WHO_ARE_U') == ['who','are']
+assert chunk_name('XMLIsDerpy') == ['xml','is','derpy']
+assert chunk_name('fancyURLOpener') == ['fancy','url','opener']
 
 def count(d, k):
     assert k
-    k = k.lower()
     if k not in d:
         d[k] = 1
     else:
         d[k] += 1
     return
 
-def count2(d, k1, k2):
-    k = (k1.lower(), k2.lower())
-    if k not in d:
-        d[k] = 1
-    else:
-        d[k] += 1
-    return
-
-def show(d, n=1000):
+def dump(d, n=100):
     for (k,v) in sorted(d.iteritems(), key=lambda (k,v):v, reverse=True):
-        print ' ', v, k
+        if isinstance(k, basestring):
+            print ' ', v, k
+        else:
+            print ' ', v, ' '.join(k)
         n -= 1
         if n == 0: break
     print
     return
 
-def show2(d, n=1000):
-    for (k,v) in sorted(d.iteritems(), key=lambda (k,v):v, reverse=True):
-        print ' ', v, ' '.join(k)
-        n -= 1
-        if n == 0: break
-    print
-    return
+class Stat(object):
+
+    def __init__(self, name):
+        self.name = name
+        self.word = {}
+        self.prefix = {}
+        self.suffix = {}
+        self.bigram = {}
+        return
+
+    def add(self, v):
+        words = chunk_name(v)
+        if not words: return
+        for w in words:
+            count(self.word, w)
+        if 2 <= len(words):
+            count(self.prefix, words[0])
+            count(self.suffix, words[-1])
+        for (w1,w2) in zip(words[:-1], words[1:]):
+            count(self.bigram, (w1,w2))
+        return
+
+    def show(self, n=100):
+        print '+%s_word:' % self.name
+        dump(self.word, n=n)
+        print '+%s_prefix:' % self.name
+        dump(self.prefix, n=n)
+        print '+%s_suffix:' % self.name
+        dump(self.suffix, n=n)
+        print '+%s_bigram:' % self.name
+        dump(self.bigram, n=n)
+        return
+
 
 def main(argv):
     import fileinput
-    var_prefix = {}
-    var_suffix = {}
-    var_word = {}
-    var_ngram = {}
-    type_prefix = {}
-    type_suffix = {}
-    type_word = {}
-    type_ngram = {}
-    func_prefix = {}
-    func_suffix = {}
-    func_word = {}
-    func_ngram = {}
+    
+    varstat = Stat('var')
+    typestat = Stat('type')
+    funcstat = Stat('func')
     func_verb = {}
+    func_assoc = {}
     for line in fileinput.input():
         (k,_,v) = line.strip().partition(' ')
         if k == 'vardecl':
-            words = chunk_name(v)
-            if words:
-                if 2 <= len(words):
-                    count(var_prefix, words[0])
-                    count(var_suffix, words[-1])
-                for w in words:
-                    count(var_word, w)
-                for (w1,w2) in zip(words[:-1], words[1:]):
-                    count2(var_ngram, w1,w2)
+            varstat.add(v)
         elif k == 'typedecl':
-            words = chunk_name(v)
-            if words:
-                if 2 <= len(words):
-                    count(type_prefix, words[0])
-                    count(type_suffix, words[-1])
-                for w in words:
-                    count(type_word, w)
-                for (w1,w2) in zip(words[:-1], words[1:]):
-                    count2(type_ngram, w1,w2)
+            typestat.add(v)
         elif k == 'funcdecl' or k == 'funcall':
             (name,_,args) = v.partition(' ')
+            funcstat.add(name)
             words = chunk_name(name)
-            if words:
-                if 2 <= len(words):
-                    count(func_prefix, words[0])
-                    count(func_suffix, words[-1])
-                    verbs = (words[0], words[-1])
-                else:
-                    verbs = (words[-1],)
-                for w in words:
-                    count(func_word, w)
-                for (w1,w2) in zip(words[:-1], words[1:]):
-                    count2(func_ngram, w1,w2)
-                for noun in args.split(' '):
-                    words = chunk_name(noun)
-                    if words:
-                        n = words[-1]
-                        for v in verbs:
-                            count2(func_verb, v, n)
+            if 2 <= len(words):
+                verbs = (words[0], words[-1])
+            elif words:
+                verbs = (words[-1],)
+            else:
+                continue
+            nouns = []
+            for noun in args.split(' '):
+                varstat.add(noun)
+                words = chunk_name(noun)
+                if words:
+                    nouns.append(words[-1])
+            for v in verbs:
+                for n in nouns:
+                    count(func_verb, (v,n))
+            for (i,n1) in enumerate(nouns):
+                for n2 in nouns[i+1:]:
+                    if n1 == n2: continue
+                    k = ( (n1,n2) if n1 < n2 else (n2,n1) )
+                    count(func_assoc, k)
     #
-    print '+var_prefix:'
-    show(var_prefix)
-    print '+var_suffix:'
-    show(var_suffix)
-    print '+var_word:'
-    show(var_word)
-    print '+var_ngram:'
-    show2(var_ngram)
-    #
-    print '+type_prefix:'
-    show(type_prefix)
-    print '+type_suffix:'
-    show(type_suffix)
-    print '+type_word:'
-    show(type_word)
-    print '+type_ngram:'
-    show2(type_ngram)
-    #
-    print '+func_prefix:'
-    show(func_prefix)
-    print '+func_suffix:'
-    show(func_suffix)
-    print '+func_word:'
-    show(func_word)
-    print '+func_ngram:'
-    show2(func_ngram)
+    n = 100
+    varstat.show(n=n)
+    typestat.show(n=n)
+    funcstat.show(n=n)
     print '+func_verb:'
-    show2(func_verb)
+    dump(func_verb, n=n)
+    print '+func_assoc:'
+    dump(func_assoc, n=n)
     return
 
 if __name__ == '__main__': sys.exit(main(sys.argv))
