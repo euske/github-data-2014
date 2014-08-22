@@ -32,3 +32,5 @@ Language Parsing
    (e.g. `int func(void *p, EXTRA_ARGS);` )
  * Python Caveats: Mixture of Python 2 and 3 code. 
    The compiler.ast module handles both pretty well.
+ * The following names were excluded: one-letter names, "assert" as a function name, and
+   "self" as a variable name (in Python).

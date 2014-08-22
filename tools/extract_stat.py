@@ -87,31 +87,39 @@ class Stat(object):
 
 def main(argv):
     import fileinput
-    
+    import getopt
+    (opts, args) = getopt.getopt(argv[1:], 'P')
+    python = False
+    for (k, v) in opts:
+        if k == '-P': python = True
+    #
     varstat = Stat('var')
     typestat = Stat('type')
     funcstat = Stat('func')
     func_verb = {}
     func_assoc = {}
-    for line in fileinput.input():
+    for line in fileinput.input(args):
         (k,_,v) = line.strip().partition(' ')
         if k == 'vardecl':
             varstat.add(v)
         elif k == 'typedecl':
             typestat.add(v)
         elif k == 'funcdecl' or k == 'funcall':
-            (name,_,args) = v.partition(' ')
-            funcstat.add(name)
-            words = chunk_name(name)
+            (verb,_,args) = v.partition(' ')
+            funcstat.add(verb)
+            words = chunk_name(verb)
             if 2 <= len(words):
                 verbs = (words[0], words[-1])
             elif words:
                 verbs = (words[-1],)
             else:
                 continue
+            verbs = [ verb for verb in verbs if verb != 'assert' ]
             nouns = []
             for noun in args.split(' '):
-                varstat.add(noun)
+                if k == 'funcdecl':
+                    varstat.add(noun)
+                if python and noun == 'self': continue
                 words = chunk_name(noun)
                 if words:
                     nouns.append(words[-1])
