@@ -1,0 +1,1428 @@
++var_word:
+  3534 name
+  3513 key
+  3258 id
+  2876 value
+  2201 type
+  2158 view
+  1966 request
+  1847 context
+  1759 state
+  1723 result
+  1634 arg
+  1546 count
+  1493 index
+  1426 file
+  1414 size
+  1356 data
+  1266 url
+  1166 response
+  1094 message
+  1078 list
+  1075 max
+  1038 width
+  1035 item
+  1022 listener
+  1017 offset
+  1013 instance
+  989 position
+  979 start
+  968 text
+  952 event
+  945 height
+  893 is
+  888 in
+  854 new
+  836 saved
+  836 default
+  829 code
+  828 path
+  820 status
+  819 time
+  815 source
+  813 to
+  804 target
+  759 tag
+  759 cache
+  748 method
+  747 args
+  734 action
+  730 uri
+  719 class
+  717 string
+  716 node
+  713 length
+  695 buffer
+  669 error
+  655 intent
+  646 current
+  638 last
+  637 content
+  632 handler
+  618 out
+  617 res
+  616 menu
+  608 parent
+  605 image
+  602 map
+  595 info
+  592 bytes
+  585 params
+  583 line
+  583 stream
+  579 user
+  573 mode
+  565 object
+  558 field
+  557 end
+  555 version
+  554 client
+  536 session
+  532 num
+  528 child
+  525 entity
+  522 array
+  511 token
+  504 title
+  484 expected
+  479 config
+  478 connection
+  471 color
+  463 adapter
+  457 element
+  454 header
+  454 builder
+  453 input
+  453 on
+  451 body
+  448 property
+  446 set
+  444 min
+  439 doc
+
++var_prefix:
+  828 saved
+  779 new
+  736 default
+  707 is
+  670 max
+  517 request
+  493 current
+  491 last
+  430 key
+  400 file
+  388 content
+  375 num
+  365 image
+  314 response
+  295 message
+  285 old
+  282 start
+  275 event
+  267 test
+  265 child
+  260 target
+  259 on
+  259 cache
+  256 list
+  249 action
+  244 user
+  240 method
+  239 error
+  239 item
+  238 my
+  235 type
+  233 text
+  230 status
+  226 in
+  225 property
+  221 expected
+  219 header
+  219 column
+  217 result
+  215 data
+  213 app
+  205 first
+  205 view
+  204 node
+  203 http
+  202 log
+  201 extra
+  196 out
+  195 line
+  195 class
+  194 local
+  186 serial
+  182 has
+  181 to
+  180 min
+  169 base
+  165 input
+  164 next
+  162 json
+  157 xml
+  156 time
+  154 source
+  152 session
+  150 res
+  149 id
+  149 graph
+  147 width
+  146 web
+  145 parent
+  143 value
+  142 buffer
+  142 field
+  142 store
+  141 thread
+  140 end
+  136 height
+  134 output
+  131 total
+  131 no
+  130 state
+  129 byte
+  128 menu
+  128 show
+  126 query
+  125 resource
+  121 progress
+  115 group
+  114 layout
+  114 account
+  113 all
+  112 selected
+  111 empty
+  111 use
+  109 src
+  108 client
+  108 gl
+  108 pending
+  107 return
+  105 card
+  105 title
+
++var_suffix:
+  2162 id
+  1981 name
+  1236 state
+  1128 type
+  1097 view
+  894 count
+  886 size
+  823 key
+  742 value
+  620 code
+  562 index
+  453 listener
+  452 width
+  427 time
+  406 string
+  399 file
+  398 height
+  386 class
+  377 url
+  370 list
+  352 path
+  344 offset
+  341 info
+  326 data
+  303 handler
+  303 map
+  303 length
+  295 text
+  288 request
+  284 uri
+  276 manager
+  276 mode
+  262 spec
+  254 position
+  243 token
+  232 set
+  231 stream
+  229 object
+  227 cache
+  226 bytes
+  222 array
+  206 factory
+  206 context
+  203 color
+  202 node
+  199 result
+  195 button
+  190 item
+  184 intent
+  182 uid
+  180 tag
+  170 version
+  168 error
+  167 dir
+  166 start
+  160 config
+  160 params
+  160 method
+  160 response
+  158 buffer
+  147 layout
+  147 adapter
+  147 types
+  147 source
+  145 service
+  145 body
+  143 message
+  143 names
+  142 left
+  138 enabled
+  136 builder
+  135 event
+  133 ms
+  133 values
+  132 prefix
+  130 order
+  129 format
+  128 headers
+  125 number
+  124 property
+  123 status
+  122 field
+  122 line
+  121 client
+  120 timeout
+  120 callback
+  120 drawable
+  119 element
+  114 millis
+  114 action
+  113 secret
+  110 bar
+  110 date
+  110 ids
+  108 group
+  108 args
+  105 title
+  104 port
+  102 end
+  101 row
+
++var_bigram:
+  755 instance state
+  751 saved instance
+  236 res id
+  196 measure spec
+  168 serial version
+  168 version uid
+  158 file name
+  150 list view
+  142 default value
+  142 class name
+  129 buffer size
+  115 key code
+  113 content type
+  109 request code
+  105 cache key
+  105 access token
+  103 image view
+  99 result code
+  98 action bar
+  96 width measure
+  94 field name
+  94 node id
+  92 convert view
+  91 graph object
+  90 text view
+  90 height measure
+  88 request listener
+  85 log tag
+  84 input stream
+  83 status code
+  82 stream id
+  82 web socket
+  79 resource id
+  78 file type
+  76 package name
+  76 out state
+  74 method info
+  73 method name
+  72 layout params
+  71 gl state
+  68 item id
+  65 master secret
+  62 return type
+  62 column name
+  62 menu item
+  60 property name
+  60 click listener
+  59 event name
+  58 in order
+  56 app id
+  56 pointer id
+  55 application id
+  55 progress bar
+  55 feature id
+  55 start time
+  54 message id
+  53 max size
+  52 status error
+  51 field desc
+  51 response handler
+  50 message view
+  50 app link
+  50 image uri
+  49 request status
+  49 new config
+  49 json object
+  48 item count
+  48 byte array
+  48 accept type
+  48 weather request
+  47 column index
+  46 mime type
+  46 number of
+  46 user id
+  46 response code
+  46 card view
+  45 thread pool
+  44 event type
+  44 image url
+  44 header view
+  43 not found
+  42 system id
+  42 max width
+  42 new value
+  42 base uri
+  42 event param
+  42 request id
+  42 timeout ms
+  42 device property
+  42 request token
+  41 store name
+  39 folder name
+  39 row id
+  39 content length
+  39 response body
+  39 web view
+  39 pool size
+  39 output stream
+  38 session id
+  38 group id
+
++type_word:
+  1128 test
+  454 activity
+  255 view
+  182 list
+  166 fragment
+  148 handler
+  145 adapter
+  135 factory
+  133 request
+  132 http
+  122 service
+  121 event
+  116 base
+  113 exception
+  113 action
+  113 tests
+  104 client
+  103 utils
+  95 cache
+  89 sample
+  84 image
+  83 file
+  82 impl
+  79 to
+  78 stream
+  77 data
+  77 command
+  74 object
+  74 item
+  73 abstract
+  73 default
+  73 util
+  72 manager
+  72 response
+  72 parser
+  70 type
+  69 filter
+  69 entity
+  69 provider
+  67 bar
+  67 text
+  67 async
+  66 server
+  64 message
+  63 xml
+  63 case
+  62 simple
+  62 web
+  62 socket
+  59 query
+  58 listener
+  56 with
+  56 hystrix
+  54 layout
+  54 loader
+  54 map
+  54 helper
+  53 example
+  53 card
+  53 result
+  53 builder
+  52 array
+  52 resource
+  52 processor
+  52 thread
+  52 store
+  51 context
+  49 json
+  48 queue
+  47 main
+  47 app
+  46 demo
+  45 on
+  45 task
+  45 step
+  45 key
+  44 of
+  44 input
+  43 servlet
+  43 menu
+  43 operator
+  43 error
+  43 user
+  43 value
+  42 info
+  42 set
+  41 in
+  41 connection
+  40 string
+  40 bitmap
+  40 grid
+  39 buffer
+  39 get
+  39 pull
+  39 android
+  38 refresh
+  38 block
+  38 module
+  37 config
+  37 support
+
++type_prefix:
+  118 test
+  68 abstract
+  65 base
+  60 http
+  56 default
+  56 simple
+  54 image
+  54 action
+  53 hystrix
+  49 xml
+  40 async
+  38 main
+  37 event
+  37 view
+  37 json
+  34 file
+  34 sample
+  33 operator
+  33 pull
+  33 request
+  32 web
+  31 craft
+  31 of
+  30 list
+  27 user
+  26 custom
+  26 query
+  26 facebook
+  26 instrumented
+  25 fragment
+  25 on
+  25 local
+  24 string
+  24 block
+  23 jedis
+  23 netty
+  22 basic
+  22 text
+  22 flip
+  21 card
+  20 data
+  19 get
+  19 thread
+  18 filter
+  18 byte
+  18 nokogiri
+  17 bootstrap
+  17 message
+  17 grizzly
+  17 one
+  16 object
+  16 entity
+  16 mock
+  16 grid
+  16 account
+  16 cache
+  15 lazy
+  15 in
+  15 rest
+  15 google
+  15 multi
+  15 android
+  15 auth
+  15 cocos
+  14 my
+  14 editor
+  14 time
+  14 graph
+  14 map
+  14 resource
+  14 settings
+  14 ruby
+  14 server
+  14 activity
+  14 java
+  14 bt
+  14 app
+  14 native
+  14 class
+  14 url
+  14 persistent
+  13 response
+  13 item
+  13 color
+  13 ok
+  13 create
+  13 error
+  13 key
+  13 command
+  12 type
+  12 contacts
+  12 annotation
+  12 html
+  12 spice
+  12 search
+  12 session
+  12 header
+  12 long
+  12 atmosphere
+  12 progress
+
++type_suffix:
+  896 test
+  413 activity
+  125 fragment
+  121 adapter
+  118 view
+  117 handler
+  111 tests
+  98 factory
+  85 utils
+  83 exception
+  76 impl
+  69 service
+  60 case
+  54 manager
+  51 parser
+  49 util
+  48 cache
+  48 command
+  45 example
+  45 helper
+  45 client
+  45 provider
+  43 stream
+  43 event
+  40 type
+  40 loader
+  40 builder
+  40 processor
+  39 sample
+  35 request
+  35 context
+  34 listener
+  32 filter
+  31 layout
+  29 list
+  29 base
+  29 demo
+  29 task
+  29 info
+  28 action
+  26 queue
+  26 map
+  26 wrapper
+  26 result
+  25 reader
+  25 receiver
+  25 strategy
+  25 support
+  24 item
+  23 config
+  23 message
+  22 controller
+  21 servlet
+  21 data
+  21 store
+  21 module
+  20 set
+  20 server
+  20 decoder
+  19 api
+  19 dialog
+  18 app
+  18 object
+  18 generator
+  17 collector
+  16 stub
+  16 writer
+  16 response
+  16 dao
+  16 pool
+  15 body
+  15 serializer
+  14 benchmark
+  14 group
+  14 bar
+  14 holder
+  14 runner
+  14 configuration
+  14 source
+  14 encoder
+  14 converter
+  14 rule
+  13 card
+  13 executor
+  13 handle
+  13 connection
+  13 resolver
+  13 application
+  12 callback
+  12 matcher
+  12 state
+  12 drawable
+  12 methods
+  11 query
+  11 entity
+  11 interceptor
+  11 packet
+  11 detector
+  11 evaluator
+  11 indicator
+
++type_bigram:
+  61 test case
+  48 action bar
+  44 step test
+  37 view activity
+  36 main activity
+  36 pull to
+  36 to refresh
+  32 web socket
+  31 list view
+  29 http client
+  26 input stream
+  23 event bus
+  22 list activity
+  21 object persister
+  21 output stream
+  21 async http
+  20 of activity
+  19 commands test
+  19 list adapter
+  18 http response
+  18 list fragment
+  17 factory test
+  17 web view
+  17 throughput test
+  15 cocos dx
+  15 test app
+  15 sample activity
+  15 item view
+  15 expandable list
+  14 black box
+  14 response handler
+  14 text view
+  13 on subscribe
+  13 event handler
+  13 scroll view
+  13 handler test
+  13 activity test
+  13 box test
+  12 to one
+  12 http request
+  12 one to
+  12 request builder
+  12 bitmap hunter
+  12 metrics publisher
+  12 image loading
+  11 memory cache
+  11 result parser
+  11 key column
+  11 in file
+  11 column value
+  11 grid view
+  11 image view
+  11 service test
+  11 entity test
+  10 byte array
+  10 health check
+  10 injection test
+  10 provider test
+  10 lru cache
+  10 integration test
+  10 parsed result
+  10 utils test
+  10 error handler
+  10 menu item
+  10 mote type
+  10 util test
+  10 fragment activity
+  10 array queue
+  10 ring buffer
+  9 view pager
+  9 url connection
+  9 cache test
+  9 bar activity
+  9 vertex buffer
+  9 ok http
+  9 persister factory
+  9 graph object
+  9 entity dao
+  9 spice service
+  9 of android
+  9 buffer object
+  8 hystrix command
+  8 performance test
+  8 chaos monkey
+  8 hash map
+  8 janitor crawler
+  8 thread pool
+  8 text area
+  8 edit text
+  8 value test
+  8 pager activity
+  8 adapter test
+  8 card fragment
+  8 pager adapter
+  8 test utils
+  8 image loader
+  8 json object
+  8 linear layout
+  8 spice request
+  7 service impl
+
++func_word:
+  65389 get
+  26070 set
+  15460 assert
+  13121 equals
+  11216 on
+  11142 is
+  10706 add
+  9721 to
+  9251 string
+  6590 create
+  6466 test
+  5326 view
+  5309 put
+  5264 size
+  5227 name
+  5224 value
+  4978 exception
+  4898 type
+  4549 list
+  4514 array
+  4407 id
+  3680 write
+  3560 append
+  3539 key
+  3529 text
+  3451 item
+  3294 read
+  3095 request
+  2992 with
+  2953 int
+  2929 of
+  2920 next
+  2868 by
+  2786 file
+  2682 null
+  2661 listener
+  2591 remove
+  2590 true
+  2478 not
+  2454 count
+  2427 data
+  2374 for
+  2369 hash
+  2346 error
+  2319 has
+  2317 new
+  2269 message
+  2263 length
+  2204 println
+  2185 find
+  2184 close
+  2139 from
+  2106 state
+  2076 action
+  2072 start
+  2036 time
+  2036 class
+  1947 parse
+  1934 object
+  1931 stream
+  1928 as
+  1899 instance
+  1889 empty
+  1848 header
+  1781 all
+  1771 contains
+  1743 content
+  1728 update
+  1726 and
+  1721 map
+  1716 primitive
+  1715 property
+  1698 cache
+  1651 response
+  1631 byte
+  1618 method
+  1617 format
+  1590 event
+  1578 index
+  1516 current
+  1506 check
+  1487 code
+  1473 open
+  1473 build
+  1466 in
+  1452 url
+  1441 menu
+  1437 equal
+  1434 bytes
+  1409 info
+  1403 layout
+  1399 load
+  1376 show
+  1365 clear
+  1333 image
+  1324 long
+  1310 at
+  1304 activity
+  1291 send
+  1262 illegal
+
++func_prefix:
+  57170 get
+  22148 set
+  15420 assert
+  10272 is
+  9123 on
+  5552 add
+  5140 test
+  4718 to
+  3792 create
+  2208 read
+  1991 has
+  1982 find
+  1912 new
+  1805 write
+  1764 array
+  1727 hash
+  1647 primitive
+  1628 put
+  1309 remove
+  1278 check
+  1241 illegal
+  1122 parse
+  1117 as
+  1003 update
+  925 string
+  912 do
+  905 load
+  880 start
+  865 print
+  840 show
+  837 value
+  836 send
+  821 handle
+  737 next
+  718 open
+  700 current
+  676 visit
+  654 headed
+  651 contains
+  649 register
+  625 char
+  621 runtime
+  611 index
+  602 init
+  584 int
+  575 make
+  573 gl
+  557 notify
+  542 starts
+  534 append
+  504 clear
+  497 build
+  497 request
+  492 then
+  466 mock
+  451 for
+  444 file
+  441 run
+  436 draw
+  435 should
+  430 byte
+  429 key
+  425 post
+  422 close
+  407 json
+  404 wait
+  404 execute
+  401 not
+  381 linked
+  375 entry
+  373 equals
+  366 compare
+  339 log
+  338 unsupported
+  337 dispatch
+  335 with
+  330 ruby
+  327 stop
+  326 delete
+  325 generate
+  319 verify
+  312 invoke
+  306 atomic
+  304 end
+  302 copy
+  302 decode
+  296 convert
+  277 format
+  277 bind
+  276 save
+  276 reset
+  274 default
+  271 http
+  270 action
+  269 encode
+  267 setup
+  267 process
+  264 replace
+  263 validate
+  263 apply
+
++func_suffix:
+  8935 equals
+  6502 string
+  4593 exception
+  4466 name
+  3992 type
+  3927 id
+  3647 value
+  3387 list
+  2845 view
+  2572 true
+  2505 listener
+  2260 null
+  2127 to
+  1984 int
+  1876 count
+  1869 key
+  1745 array
+  1736 of
+  1736 set
+  1656 item
+  1642 text
+  1613 message
+  1554 size
+  1530 stream
+  1418 map
+  1404 empty
+  1401 create
+  1357 error
+  1278 code
+  1244 bytes
+  1237 class
+  1231 state
+  1203 property
+  1184 instance
+  1162 request
+  1139 at
+  1138 next
+  1098 data
+  1077 adapter
+  1056 event
+  1051 url
+  1049 file
+  1049 all
+  1046 enabled
+  993 path
+  976 time
+  954 object
+  947 width
+  924 method
+  897 with
+  895 millis
+  894 token
+  879 context
+  869 height
+  868 response
+  864 changed
+  839 false
+  838 boolean
+  837 result
+  833 menu
+  817 callback
+  817 header
+  813 visibility
+  777 handler
+  770 info
+  758 cache
+  742 color
+  742 long
+  737 activity
+  707 case
+  697 builder
+  690 position
+  688 mode
+  679 body
+  670 action
+  655 params
+  647 layout
+  630 that
+  617 line
+  611 buffer
+  611 index
+  604 extra
+  593 trace
+  586 return
+  585 resource
+  578 title
+  565 filter
+  550 thread
+  548 selected
+  542 service
+  537 entity
+  532 field
+  531 tag
+  513 length
+  508 up
+  507 reference
+  504 factory
+  497 drawable
+  489 parameter
+  485 node
+
++func_bigram:
+  8625 assert equals
+  3097 to string
+  2377 assert true
+  1743 array list
+  1706 on create
+  1651 primitive type
+  1609 get string
+  1550 get name
+  1444 not null
+  1317 by id
+  1278 equal to
+  1252 get value
+  1226 is empty
+  1193 find view
+  1177 view by
+  1042 assert not
+  1015 is equal
+  960 hash map
+  904 set on
+  886 byte array
+  884 set text
+  817 value of
+  786 get message
+  750 get instance
+  747 illegal argument
+  745 argument exception
+  714 get id
+  708 hash code
+  703 assert false
+  687 click listener
+  684 get class
+  683 set content
+  670 input stream
+  669 text item
+  660 time millis
+  659 get item
+  659 get int
+  658 get key
+  656 runtime exception
+  654 headed text
+  639 get type
+  635 as list
+  633 get bytes
+  627 stack trace
+  617 content view
+  617 assert that
+  614 index of
+  600 on next
+  596 get response
+  588 char at
+  575 current time
+  565 on click
+  564 set visibility
+  559 starts with
+  536 get child
+  527 print stack
+  509 output stream
+  507 state exception
+  502 illegal state
+  494 get simple
+  489 hash set
+  482 then return
+  480 get boolean
+  475 string builder
+  449 assert null
+  447 get height
+  444 int value
+  441 get property
+  439 to byte
+  438 layout params
+  435 get time
+  426 contains key
+  418 get text
+  418 action bar
+  416 get width
+  411 get activity
+  411 options menu
+  410 get content
+  408 has next
+  405 get logger
+  393 get method
+  388 is set
+  387 get url
+  387 item selected
+  385 get data
+  381 get default
+  380 put string
+  379 ignore case
+  371 instance state
+  367 simple name
+  365 get context
+  364 set up
+  355 get parent
+  354 get action
+  354 on resume
+  350 equals ignore
+  345 get count
+  342 is null
+  341 put extra
+  335 set title
+
++func_verb:
+  1727 on state
+  1411 get key
+  1406 invoke arg
+  1133 create state
+  1120 get class
+  1103 get name
+  933 set value
+  802 get id
+  729 view view
+  701 type byte
+  700 primitive byte
+  668 put key
+  597 get position
+  561 name name
+  550 listener listener
+  548 get index
+  533 set id
+  520 get context
+  509 on code
+  508 mock class
+  460 ret arg
+  457 id id
+  455 type int
+  454 primitive int
+  450 put value
+  410 menu menu
+  400 on event
+  396 on menu
+  377 get value
+  375 set this
+  357 event event
+  357 set listener
+  356 set view
+  355 get type
+  355 equals name
+  351 measure spec
+  348 state state
+  347 adapter adapter
+  335 set name
+  331 set adapter
+  317 file file
+  310 logger class
+  309 add name
+  308 set visible
+  307 on item
+  303 result code
+  301 key key
+  282 request request
+  281 value value
+  280 selected item
+  280 put name
+  278 draw canvas
+  270 get view
+  270 get this
+  264 create class
+  264 equals expected
+  257 type type
+  255 get url
+  253 main args
+  251 add value
+  247 visibility visible
+  245 on id
+  245 equals type
+  244 listener this
+  242 size size
+  241 set color
+  241 add id
+  239 on view
+  237 color color
+  231 put id
+  229 add class
+  227 of class
+  222 add view
+  217 add listener
+  216 create name
+  214 url url
+  213 set gone
+  213 on position
+  210 view parent
+  210 on spec
+  210 set key
+  209 visibility gone
+  208 type float
+  208 shard key
+  207 primitive float
+  206 equals value
+  204 any class
+  203 set context
+  202 get request
+  201 text text
+  199 set index
+  199 remove key
+  197 on this
+  196 get uri
+  196 set title
+  195 set size
+  194 class class
+  193 format name
+  189 string name
+  182 arraycopy length
+
++func_assoc:
+  825 key value
+  722 height width
+  437 name value
+  359 end start
+  283 code data
+  281 max min
+  242 code event
+  215 key max
+  214 key min
+  210 position view
+  206 context id
+  200 name type
+  197 from to
+  195 parent view
+  191 request response
+  185 class this
+  180 scr tex
+  176 dx dy
+  169 count offset
+  162 id name
+  158 key offset
+  158 left top
+  156 sx sy
+  153 length offset
+  152 left right
+  142 actual expected
+  139 host port
+  134 context name
+  133 bbar bfoo
+  133 desc name
+  132 key start
+  132 ptr this
+  123 id position
+  122 end key
+  121 parent position
+  118 count key
+  118 name target
+  117 path route
+  108 buf flags
+  105 dy sx
+  105 dy sy
+  105 prefix props
+  105 dx sy
+  105 dx sx
+  102 data key
+  102 class context
+  102 container inflater
+  101 class url
+  101 index value
+  98 element name
+  96 size type
+  96 bottom top
+  96 data length
+  95 key val
+  94 count max
+  94 path type
+  94 max offset
+  93 bottom left
+  92 field value
+  92 bottom right
+  92 end file
+  92 key name
+  91 context intent
+  90 right top
+  89 id view
+  89 count min
+  88 inflater state
+  88 status url
+  88 min offset
+  88 file start
+  88 key uri
+  87 params pname
+  87 context handler
+  83 container state
+  81 class name
+  80 buffer length
+  79 data type
+  78 format height
+  78 key member
+  78 format width
+  78 len off
+  78 actuals expecteds
+  77 item this
+  77 buffer offset
+  74 handler url
+  74 field key
+  73 dest src
+  73 params view
+  73 attrs context
+  73 name owner
+  72 buf width
+  72 bytes length
+  72 arraylength nop
+  72 context node
+  71 options writer
+  71 context type
+  70 buf height
+  67 name uri
+  67 element valid
+  66 buf subsamp
+

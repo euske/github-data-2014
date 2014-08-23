@@ -1,0 +1,1428 @@
++var_word:
+  59677 self
+  8381 name
+  4247 args
+  4206 data
+  4183 value
+  4105 path
+  3439 key
+  3387 result
+  3271 kwargs
+  2833 response
+  2548 id
+  2502 msg
+  2465 url
+  2431 line
+  2113 request
+  2003 file
+  1951 type
+  1801 node
+  1699 text
+  1611 cls
+  1506 new
+  1466 info
+  1450 field
+  1447 filename
+  1421 index
+  1407 item
+  1386 start
+  1349 obj
+  1343 default
+  1326 user
+  1224 size
+  1210 list
+  1149 page
+  1142 app
+  1132 content
+  1126 dir
+  1108 model
+  1107 expected
+  1093 val
+  1074 out
+  1073 version
+  1058 ret
+  1015 output
+  1009 func
+  1004 config
+  999 res
+  975 num
+  962 string
+  957 cmd
+  937 context
+  926 end
+  913 template
+  864 test
+  860 class
+  858 port
+  847 max
+  841 code
+  841 host
+  838 options
+  836 message
+  831 to
+  825 arg
+  819 source
+  811 event
+  800 names
+  797 all
+  778 module
+  773 error
+  756 params
+  750 other
+  746 prefix
+  737 tag
+  732 label
+  730 lines
+  730 parent
+  728 body
+  721 fields
+  712 err
+  709 count
+  708 date
+  707 query
+  705 token
+  700 is
+  690 format
+  682 values
+  679 pos
+  667 old
+  666 base
+  656 idx
+  653 headers
+  646 title
+  641 input
+  641 str
+  630 encoding
+  629 group
+  620 root
+  618 match
+  612 frame
+  606 state
+  603 env
+
++var_prefix:
+  1195 new
+  682 default
+  636 is
+  577 max
+  503 num
+  491 file
+  476 old
+  419 start
+  411 last
+  410 field
+  389 content
+  383 user
+  372 test
+  341 current
+  341 msg
+  341 app
+  327 use
+  326 http
+  323 has
+  319 common
+  316 module
+  306 template
+  288 get
+  287 all
+  280 exc
+  277 error
+  266 line
+  257 repo
+  257 base
+  252 option
+  248 extra
+  243 to
+  242 event
+  238 data
+  235 html
+  235 output
+  231 first
+  230 config
+  230 valid
+  226 expected
+  223 video
+  219 input
+  217 date
+  216 source
+  210 min
+  209 arg
+  208 item
+  208 cur
+  207 in
+  207 log
+  207 ret
+  204 group
+  202 err
+  202 model
+  194 prev
+  192 cache
+  190 return
+  189 show
+  187 filter
+  186 class
+  186 page
+  182 next
+  182 tag
+  181 key
+  177 image
+  176 post
+  175 info
+  172 search
+  171 parent
+  171 url
+  168 local
+  167 path
+  166 end
+  166 complete
+  166 task
+  164 db
+  163 token
+  163 request
+  162 out
+  156 fs
+  155 from
+  153 index
+  152 time
+  149 re
+  148 query
+  147 object
+  147 server
+  147 version
+  146 response
+  145 help
+  145 allow
+  143 src
+  142 target
+  142 text
+  140 result
+  139 root
+  138 segment
+  137 no
+  136 import
+  135 type
+
++var_suffix:
+  3213 name
+  1910 id
+  1533 path
+  1306 type
+  997 data
+  928 list
+  877 dir
+  853 info
+  802 url
+  771 file
+  659 value
+  622 size
+  615 class
+  589 msg
+  508 string
+  502 key
+  495 args
+  469 index
+  452 names
+  419 str
+  355 line
+  351 text
+  331 label
+  331 version
+  330 val
+  327 dict
+  324 format
+  305 field
+  299 re
+  293 length
+  289 count
+  277 time
+  252 table
+  248 types
+  247 port
+  243 files
+  236 page
+  235 node
+  234 fields
+  230 func
+  226 map
+  221 prefix
+  221 date
+  219 formats
+  213 start
+  212 template
+  211 cls
+  207 vars
+  205 object
+  200 code
+  198 filename
+  198 obj
+  192 values
+  189 end
+  189 apps
+  187 params
+  186 len
+  184 width
+  183 model
+  177 num
+  173 pattern
+  172 cache
+  171 state
+  171 options
+  169 header
+  169 lines
+  167 result
+  162 pos
+  159 error
+  159 kwargs
+  158 token
+  157 config
+  150 level
+  146 dirs
+  146 context
+  145 root
+  145 tags
+  144 number
+  144 set
+  138 style
+  138 host
+  137 doc
+  137 ids
+  136 offset
+  135 keys
+  134 mask
+  128 classes
+  128 response
+  127 handler
+  127 idx
+  126 max
+  125 content
+  124 errors
+  119 cmd
+  118 items
+  117 parts
+  116 strings
+  116 user
+  116 command
+  115 col
+
++var_bigram:
+  232 content type
+  195 repo id
+  179 field name
+  174 err msg
+  173 ret val
+  159 complete apps
+  131 file name
+  123 module name
+  119 return value
+  118 segment info
+  118 file path
+  116 video id
+  111 valid url
+  110 info msg
+  107 post data
+  106 exc info
+  102 warn msg
+  99 app label
+  97 option string
+  96 eval ctx
+  95 class name
+  87 template name
+  82 chunk size
+  81 group id
+  80 media type
+  80 event name
+  77 error msg
+  72 fabric mod
+  68 config file
+  67 http callable
+  65 char len
+  65 resource name
+  65 user model
+  64 exc type
+  63 random state
+  62 html theme
+  61 help command
+  61 task id
+  59 fill value
+  59 start response
+  58 start line
+  58 debug msg
+  58 object list
+  57 func name
+  56 app name
+  54 io loop
+  54 event info
+  53 access token
+  53 date format
+  52 option list
+  51 key name
+  51 table name
+  50 fs sb
+  49 common pid
+  49 common nsecs
+  49 common secs
+  49 common cpu
+  49 video url
+  49 common comm
+  49 exc value
+  48 address formats
+  48 field names
+  48 attr name
+  48 method name
+  48 to bases
+  48 model label
+  47 input formats
+  47 conforms to
+  47 ie name
+  47 base url
+  47 org id
+  47 content length
+  46 help text
+  46 output dir
+  46 field data
+  46 user orm
+  46 tag text
+  46 orm label
+  46 module args
+  45 serializer class
+  44 all data
+  44 arg strings
+  44 char to
+  43 model name
+  43 verbose name
+  42 error messages
+  42 query string
+  42 astroid fields
+  41 type name
+  41 mutagen file
+  41 out file
+  41 status code
+  41 error string
+  41 msg info
+  41 msg id
+  40 option strings
+  40 package name
+  40 len table
+  39 config path
+  39 indent level
+
++type_word:
+  2259 test
+  545 error
+  424 meta
+  422 handler
+  319 case
+  301 command
+  299 field
+  291 tests
+  283 view
+  270 file
+  258 base
+  223 model
+  218 serializer
+  205 prop
+  175 info
+  173 migration
+  173 http
+  172 list
+  170 parser
+  165 with
+  160 request
+  154 module
+  152 server
+  150 image
+  149 exception
+  144 form
+  136 config
+  132 user
+  128 manager
+  126 filter
+  126 stream
+  126 not
+  124 client
+  124 set
+  122 plugin
+  118 lang
+  115 mixin
+  114 admin
+  114 page
+  110 data
+  110 key
+  109 resource
+  107 node
+  106 context
+  104 object
+  103 template
+  103 auth
+  102 git
+  102 event
+  102 text
+  101 response
+  101 connection
+  101 invalid
+  99 class
+  98 item
+  98 dict
+  98 to
+  98 provider
+  97 type
+  92 group
+  91 ie
+  90 import
+  90 db
+  87 reader
+  87 app
+  86 many
+  86 url
+  84 storage
+  84 custom
+  83 cache
+  82 post
+  82 about
+  81 html
+  79 no
+  79 date
+  79 mock
+  78 name
+  77 action
+  76 my
+  76 task
+  76 json
+  75 proxy
+  75 query
+  73 widget
+  72 path
+  72 result
+  72 get
+  71 loader
+  70 api
+  69 default
+  69 writer
+  69 state
+  69 renderer
+  68 message
+  68 backend
+  67 fake
+  65 method
+  65 create
+  64 thread
+  64 value
+
++type_prefix:
+  1200 test
+  205 prop
+  177 base
+  129 http
+  108 file
+  102 git
+  82 about
+  79 invalid
+  70 my
+  70 mock
+  69 stream
+  68 with
+  65 fake
+  60 custom
+  55 no
+  52 config
+  52 incremental
+  52 simple
+  47 auth
+  47 json
+  46 when
+  43 get
+  42 template
+  41 import
+  41 py
+  41 user
+  40 html
+  39 request
+  38 date
+  38 multi
+  37 default
+  37 generic
+  37 command
+  36 list
+  35 post
+  33 basic
+  33 fb
+  33 python
+  30 not
+  29 django
+  29 wsgi
+  29 db
+  29 rst
+  28 wiki
+  28 media
+  28 web
+  27 dummy
+  27 bad
+  27 module
+  27 argument
+  27 many
+  27 session
+  27 api
+  27 url
+  27 text
+  26 image
+  26 create
+  26 admin
+  25 can
+  25 process
+  24 new
+  24 debug
+  24 content
+  24 model
+  24 blog
+  24 lt
+  24 view
+  24 key
+  23 glances
+  23 raw
+  23 main
+  23 search
+  23 app
+  23 static
+  23 class
+  23 page
+  22 path
+  22 figure
+  22 reactor
+  22 dict
+  22 log
+  21 filter
+  21 doc
+  21 one
+  21 read
+  21 field
+  21 action
+  21 event
+  21 video
+  21 comment
+  20 proxy
+  20 thread
+  20 tag
+  19 check
+  19 max
+  19 note
+  19 sqlmap
+  19 time
+  19 auto
+  19 chunk
+
++type_suffix:
+  645 test
+  470 error
+  371 handler
+  308 case
+  281 tests
+  189 view
+  180 command
+  178 serializer
+  151 info
+  146 field
+  120 exception
+  120 parser
+  113 model
+  111 mixin
+  108 manager
+  104 form
+  90 ie
+  90 server
+  86 set
+  77 file
+  74 reader
+  74 resource
+  69 module
+  69 plugin
+  62 node
+  60 dict
+  60 image
+  59 request
+  58 widget
+  58 list
+  57 item
+  54 response
+  53 object
+  52 client
+  51 data
+  51 base
+  51 writer
+  50 context
+  50 class
+  49 name
+  49 vows
+  48 filter
+  48 formatter
+  48 loader
+  47 admin
+  46 type
+  46 wrapper
+  45 event
+  44 result
+  44 connection
+  44 middleware
+  43 action
+  43 task
+  43 app
+  43 page
+  42 cache
+  42 renderer
+  39 generator
+  38 visitor
+  38 encoder
+  36 found
+  36 backend
+  35 classifier
+  35 method
+  35 thread
+  35 controller
+  34 state
+  33 message
+  32 format
+  32 lexer
+  31 config
+  31 finder
+  31 query
+  30 decoder
+  30 stream
+  30 settings
+  30 style
+  30 proxy
+  29 prober
+  29 code
+  28 spider
+  28 header
+  28 pool
+  27 checker
+  27 input
+  26 editor
+  26 buffer
+  25 template
+  25 entry
+  25 panel
+  24 group
+  24 inline
+  22 color
+  22 provider
+  22 block
+  21 metadata
+  21 map
+  21 extractor
+  21 key
+  20 adapter
+
++type_bigram:
+  299 test case
+  97 lang info
+  53 not found
+  36 to many
+  31 many to
+  29 view set
+  28 field test
+  28 foreign key
+  26 date time
+  26 stream reader
+  25 model serializer
+  24 stream writer
+  24 status code
+  24 request handler
+  23 corpus reader
+  22 one to
+  22 test create
+  22 incremental encoder
+  22 incremental decoder
+  21 to one
+  21 test model
+  21 blog post
+  21 web socket
+  21 list view
+  20 auth handler
+  20 storage style
+  20 test item
+  19 command result
+  19 test cloud
+  18 post gis
+  17 test page
+  17 response error
+  17 content type
+  17 related field
+  17 cloud formation
+  17 chart parser
+  16 time field
+  16 test tvdb
+  16 http client
+  16 client test
+  16 action module
+  16 parse error
+  15 test mixin
+  15 http status
+  15 http connection
+  15 help formatter
+  15 source serializer
+  15 link extractor
+  15 environment mixin
+  15 does not
+  15 lookup module
+  14 when posting
+  14 api view
+  14 connection pool
+  14 note resource
+  14 main handler
+  14 test io
+  14 import test
+  14 io loop
+  14 found error
+  14 user resource
+  13 filter spec
+  13 field model
+  13 swi debug
+  13 figure canvas
+  13 http server
+  12 read only
+  12 values ucs
+  12 git gutter
+  12 queue test
+  12 lang intel
+  12 create values
+  12 http request
+  12 query set
+  12 file upload
+  12 get image
+  12 disk queue
+  12 field serializer
+  12 security group
+  12 wiki page
+  12 slug field
+  12 my sql
+  12 fb print
+  12 io stream
+  11 quota exceeded
+  11 mock view
+  11 timeout error
+  11 doc test
+  11 thread pool
+  11 base handler
+  11 lt text
+  11 comment serializer
+  11 login handler
+  11 test image
+  11 plugin test
+  11 config loader
+  11 test document
+  11 target serializer
+  11 url field
+  11 field tests
+
++func_word:
+  33500 get
+  30839 assert
+  19003 equal
+  17127 test
+  11084 len
+  10980 set
+  9908 append
+  8852 add
+  8566 init
+  8495 error
+  7982 join
+  6022 isinstance
+  5613 write
+  4787 str
+  4635 is
+  4590 to
+  4577 list
+  4575 int
+  4515 format
+  4148 create
+  3988 from
+  3891 split
+  3655 read
+  3518 array
+  3316 true
+  3284 parse
+  3229 value
+  3219 check
+  3155 type
+  3152 field
+  3064 dict
+  3045 open
+  2957 run
+  2945 update
+  2928 file
+  2903 range
+  2809 close
+  2701 string
+  2515 path
+  2498 find
+  2461 name
+  2459 print
+  2459 request
+  2320 info
+  2245 super
+  2230 replace
+  2208 getattr
+  2203 url
+  2163 data
+  2125 all
+  2110 key
+  2083 strip
+  2065 text
+  2038 make
+  2015 group
+  2011 start
+  2004 startswith
+  1990 option
+  1982 raises
+  1976 not
+  1964 load
+  1937 items
+  1881 on
+  1865 encode
+  1821 exists
+  1803 with
+  1791 log
+  1790 hasattr
+  1751 command
+  1746 remove
+  1720 pop
+  1705 decode
+  1685 render
+  1634 match
+  1633 response
+  1610 filter
+  1595 time
+  1594 save
+  1593 lower
+  1592 none
+  1586 repr
+  1573 debug
+  1570 index
+  1567 send
+  1556 in
+  1543 view
+  1511 object
+  1510 for
+  1477 exception
+  1469 search
+  1461 call
+  1441 copy
+  1438 page
+  1414 line
+  1410 class
+  1407 compile
+  1397 config
+  1397 unicode
+  1310 exit
+  1297 new
+
++func_prefix:
+  30043 assert
+  21967 get
+  15558 test
+  7619 set
+  6402 add
+  3743 is
+  2837 create
+  2573 check
+  2243 parse
+  1937 make
+  1625 to
+  1595 value
+  1377 read
+  1354 find
+  1324 on
+  1259 run
+  1216 load
+  1129 from
+  1123 write
+  1095 handle
+  1082 has
+  877 build
+  861 update
+  839 send
+  806 as
+  770 print
+  735 do
+  732 char
+  721 format
+  709 http
+  669 process
+  645 not
+  641 remove
+  632 list
+  603 string
+  603 start
+  547 register
+  545 path
+  544 text
+  538 type
+  530 visit
+  525 new
+  511 delete
+  511 should
+  467 init
+  456 data
+  450 date
+  444 render
+  444 post
+  434 file
+  424 import
+  407 clear
+  406 generate
+  393 show
+  389 tear
+  386 setup
+  377 random
+  371 url
+  366 save
+  365 extract
+  359 skip
+  351 apply
+  350 foreign
+  348 can
+  343 validate
+  333 open
+  328 convert
+  314 call
+  313 put
+  293 pack
+  292 execute
+  291 safe
+  286 try
+  282 simple
+  279 runtime
+  279 encode
+  276 end
+  276 exc
+  276 key
+  275 append
+  272 json
+  258 ensure
+  256 force
+  253 reset
+  251 download
+  248 raw
+  248 log
+  243 request
+  241 str
+  237 ansible
+  236 split
+  232 user
+  227 html
+  226 maybe
+  222 fetch
+  221 fail
+  219 period
+  219 order
+  218 draw
+  217 search
+
++func_suffix:
+  18815 equal
+  6569 error
+  3273 true
+  2459 field
+  1867 name
+  1658 file
+  1634 raises
+  1621 string
+  1533 path
+  1381 key
+  1341 request
+  1303 option
+  1234 value
+  1214 data
+  1188 list
+  1159 info
+  1109 up
+  1084 type
+  1062 url
+  1042 response
+  1036 token
+  1031 text
+  1029 command
+  930 class
+  910 message
+  854 equals
+  849 line
+  823 false
+  802 page
+  787 view
+  784 module
+  781 dict
+  777 argument
+  769 in
+  766 object
+  758 output
+  731 exception
+  728 io
+  722 element
+  707 header
+  703 handler
+  699 context
+  666 id
+  642 test
+  642 dir
+  627 args
+  614 result
+  612 property
+  609 model
+  590 state
+  584 config
+  581 index
+  557 all
+  542 item
+  538 contains
+  523 range
+  513 start
+  513 str
+  509 frame
+  505 template
+  499 version
+  499 callback
+  474 parser
+  458 func
+  455 set
+  455 table
+  443 root
+  439 unicode
+  437 user
+  434 client
+  432 down
+  428 node
+  412 event
+  412 status
+  406 image
+  403 widget
+  399 cache
+  395 group
+  391 function
+  390 int
+  390 fields
+  389 valid
+  383 cmd
+  379 column
+  377 body
+  375 style
+  374 logger
+  364 bytes
+  355 size
+  355 task
+  348 exists
+  347 settings
+  346 options
+  345 serializer
+  334 names
+  325 input
+  325 loader
+  322 count
+  321 attribute
+  320 child
+
++func_bigram:
+  15246 assert equal
+  3185 assert true
+  1768 assert raises
+  1533 value error
+  1090 set up
+  1043 almost equal
+  767 assert false
+  759 assert equals
+  747 assert almost
+  687 char field
+  660 assert array
+  634 add option
+  623 array equal
+  552 add argument
+  542 assert in
+  536 add token
+  512 assert not
+  511 type error
+  498 get object
+  476 test get
+  468 not implemented
+  451 from string
+  451 foreign key
+  436 assert is
+  435 implemented error
+  433 is valid
+  414 string io
+  391 tear down
+  385 assert contains
+  381 has key
+  369 data frame
+  342 create page
+  328 assert frame
+  328 frame equal
+  322 queryset equal
+  322 series equal
+  322 assert series
+  314 assert queryset
+  312 get all
+  312 get logger
+  305 path from
+  301 from root
+  291 get value
+  282 runtime error
+  280 exc info
+  273 get user
+  270 as view
+  269 add widget
+  269 to equal
+  257 http response
+  242 get template
+  225 get next
+  225 get page
+  220 order by
+  219 not equal
+  218 to many
+  216 ansible error
+  211 random element
+  211 run command
+  209 storage style
+  207 next token
+  205 assertion error
+  204 get text
+  204 add line
+  202 pack start
+  201 get dir
+  197 parse args
+  194 integer field
+  193 to be
+  190 tests from
+  189 load tests
+  189 array almost
+  188 check setting
+  188 execute command
+  187 get option
+  183 bytes io
+  182 assert called
+  180 get name
+  179 test client
+  178 assert exists
+  176 make option
+  173 add test
+  172 from file
+  172 curse add
+  170 get current
+  168 test case
+  168 user model
+  165 assert no
+  162 date range
+  159 validation error
+  157 not found
+  157 get absolute
+  157 console write
+  155 create fields
+  154 create image
+  154 assert params
+  154 skip if
+  153 many to
+  153 date time
+  153 syntax error
+
++func_verb:
+  1415 raises error
+  1250 equal code
+  1012 get name
+  872 join dir
+  821 equal data
+  813 equal result
+  765 get none
+  737 init name
+  659 init kwargs
+  643 equal expected
+  609 join path
+  572 get key
+  563 init args
+  552 visit node
+  542 isinstance value
+  511 getattr none
+  455 get id
+  440 format name
+  430 len data
+  423 open path
+  415 path path
+  413 equal none
+  410 get request
+  407 equal name
+  395 isinstance basestring
+  390 dirname file
+  375 isinstance list
+  374 request request
+  373 isinstance dict
+  364 equal true
+  351 exists path
+  351 getattr name
+  342 contains response
+  340 get path
+  339 name name
+  337 file path
+  325 open filename
+  325 get false
+  320 isinstance types
+  308 isinstance node
+  306 should topic
+  304 set value
+  292 isinstance str
+  279 pack false
+  278 start false
+  277 get url
+  277 write data
+  275 is tok
+  272 expect topic
+  271 pop none
+  267 run args
+  265 equal dtype
+  263 len args
+  259 error msg
+  257 add name
+  250 open file
+  246 join name
+  242 view request
+  241 match url
+  240 data data
+  230 url url
+  228 flask name
+  225 equal false
+  211 isinstance unicode
+  209 visit frame
+  209 append name
+  208 create name
+  206 find name
+  205 isinstance type
+  205 set true
+  196 check cfg
+  194 isinstance obj
+  191 join root
+  189 get user
+  186 equal res
+  186 setattr value
+  185 isinstance index
+  184 set false
+  182 len argv
+  182 post url
+  180 isinstance int
+  179 get args
+  178 setattr name
+  177 get default
+  177 init parent
+  176 equal shape
+  174 equal exp
+  174 isinstance other
+  174 init path
+  173 warn warning
+  172 equal id
+  172 get node
+  171 get kwargs
+  169 equal body
+  168 file filename
+  167 render request
+  167 join filename
+  167 len list
+  167 value value
+  167 line msg
+
++func_assoc:
+  1575 args kwargs
+  504 name value
+  318 key value
+  312 expected result
+  298 request response
+  257 host port
+  251 kwargs name
+  250 attrs name
+  240 end start
+  217 comm pid
+  206 args name
+  200 id name
+  190 name path
+  189 kw request
+  188 kw response
+  187 kwargs request
+  170 name none
+  165 cpu pid
+  161 name type
+  154 height width
+  153 node parent
+  152 frame node
+  151 filename name
+  149 context name
+  149 comm cpu
+  145 comm name
+  141 name parent
+  140 id request
+  135 connection name
+  130 password username
+  127 name pid
+  125 type value
+  123 cls name
+  122 id url
+  122 obj value
+  121 repo ui
+  116 name obj
+  116 left right
+  115 dir name
+  113 args request
+  111 args kw
+  110 data name
+  108 environ response
+  108 opts vm
+  107 context pid
+  107 urls user
+  107 comm context
+  105 id user
+  105 score true
+  102 default key
+  102 prefix string
+  101 cpu name
+  97 name node
+  95 pid secs
+  95 comm nsecs
+  95 comm secs
+  95 nsecs pid
+  94 module name
+  94 exp result
+  93 false true
+  93 default name
+  92 new old
+  91 dst src
+  91 id path
+  90 dir filename
+  90 cass ctxt
+  89 data expected
+  89 args opts
+  88 errors input
+  88 request spider
+  87 id username
+  86 name text
+  85 req spider
+  83 name source
+  83 context cpu
+  83 data path
+  82 reason status
+  82 description name
+  81 basedir inject
+  80 method url
+  80 filename lineno
+  79 false none
+  78 bases name
+  78 body status
+  77 newnode node
+  76 headers url
+  76 arguments attributes
+  76 stderr stdout
+  75 code ok
+  75 context data
+  75 manager service
+  72 blocks string
+  72 data files
+  71 cpu secs
+  71 cpu nsecs
+  70 newnode parent
+  69 attrs value
+  69 instance value
+  69 body reason
+  68 conn tmp
+
