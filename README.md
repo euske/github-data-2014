@@ -1,7 +1,7 @@
 GitHub Data Challenge 2014 Entry
 ================================
 
-*Theme: Quest for True Names*
+**Theme: Quest for True Names**
 
 Challenge page:
 https://github.com/blog/1864-third-annual-github-data-challenge
@@ -9,10 +9,10 @@ https://github.com/blog/1864-third-annual-github-data-challenge
 Key Findings
 ------------
 
- * What are typical words used for variable names and function names? *Answer: we got a list.*
- * Are they different in different languages? *Answer: Yes, they are!*
+ * What are typical words used for variable names and function names? **Answer: we got a list.**
+ * Are they different in different languages? **Answer: Yes, they are!**
  * We can assume nouns are commonly used for variables, and verbs for functions.
-   Is there an interesting connection between them? *Answer: Yes, there is!*
+   Is there an interesting connection between them? **Answer: Yes, there is!**
 
 Method
 ------

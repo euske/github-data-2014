@@ -817,7 +817,6 @@
 +func_word:
   65389 get
   26070 set
-  15460 assert
   13121 equals
   11216 on
   11142 is
@@ -919,7 +918,6 @@
 +func_prefix:
   57170 get
   22148 set
-  15420 assert
   10272 is
   9123 on
   5552 add
@@ -1121,9 +1119,7 @@
   485 node
 
 +func_bigram:
-  8625 assert equals
   3097 to string
-  2377 assert true
   1743 array list
   1706 on create
   1651 primitive type
@@ -1136,7 +1132,6 @@
   1226 is empty
   1193 find view
   1177 view by
-  1042 assert not
   1015 is equal
   960 hash map
   904 set on
@@ -1149,7 +1144,6 @@
   745 argument exception
   714 get id
   708 hash code
-  703 assert false
   687 click listener
   684 get class
   683 set content
@@ -1166,7 +1160,6 @@
   633 get bytes
   627 stack trace
   617 content view
-  617 assert that
   614 index of
   600 on next
   596 get response

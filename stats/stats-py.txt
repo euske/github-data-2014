@@ -816,7 +816,6 @@
 
 +func_word:
   33500 get
-  30839 assert
   19003 equal
   17127 test
   11084 len
@@ -917,7 +916,6 @@
   1297 new
 
 +func_prefix:
-  30043 assert
   21967 get
   15558 test
   7619 set
@@ -1121,44 +1119,30 @@
   320 child
 
 +func_bigram:
-  15246 assert equal
-  3185 assert true
-  1768 assert raises
   1533 value error
   1090 set up
   1043 almost equal
-  767 assert false
-  759 assert equals
-  747 assert almost
   687 char field
-  660 assert array
   634 add option
   623 array equal
   552 add argument
-  542 assert in
   536 add token
-  512 assert not
   511 type error
   498 get object
   476 test get
   468 not implemented
   451 from string
   451 foreign key
-  436 assert is
   435 implemented error
   433 is valid
   414 string io
   391 tear down
-  385 assert contains
   381 has key
   369 data frame
   342 create page
-  328 assert frame
   328 frame equal
   322 queryset equal
   322 series equal
-  322 assert series
-  314 assert queryset
   312 get all
   312 get logger
   305 path from
@@ -1197,10 +1181,8 @@
   188 execute command
   187 get option
   183 bytes io
-  182 assert called
   180 get name
   179 test client
-  178 assert exists
   176 make option
   173 add test
   172 from file
