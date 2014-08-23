@@ -1,12 +1,30 @@
 GitHub Data Challenge 2014 Entry
 ================================
 
+*Theme: Quest for True Names*
+
+Challenge page:
 https://github.com/blog/1864-third-annual-github-data-challenge
+
+Key Findings
+------------
+
+ * What are typical words used for variable names and function names? *Answer: we got a list.*
+ * Are they different in different languages? *Answer: Yes, they are!*
+ * We can assume nouns are commonly used for variables, and verbs for functions.
+   Is there an interesting connection between them? *Answer: Yes, there is!*
+
+Method
+------
+
+ * Examine source code in three major languages: C, Java and Python.
+ * List the names for variables, functions (methods) and types (classes).
+ * Count common words from each list, and see if an interesting statistics emerges.
 
 Data We Used
 ------------
 
- * Pick the top 100 repositories (in terms of Stars) that are labelled as: C, Java and Python.
+ * Pick the top 100 repositories (in terms of Stars) that are labelled as each language.
    (via GitHub Search API, cf. https://developer.github.com/v3/search/)
    [Obtained at Aug. 8, 2014]
  * List all the files: (Caveats: We excluded non-ASCII filenames.)
