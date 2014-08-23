@@ -3,7 +3,9 @@ GitHub Data Challenge 2014 Entry
 
 **Theme: Quest for True Names**
 
-Challenge page:
+**Result: http://euske.github.io/github-data-2014/index.html**
+
+Challenge announcement:
 https://github.com/blog/1864-third-annual-github-data-challenge
 
 Key Findings
@@ -13,6 +15,7 @@ Key Findings
  * Are they different in different languages? **Answer: Yes, they are!**
  * We can assume nouns are commonly used for variables, and verbs for functions.
    Is there an interesting connection between them? **Answer: Yes, there is!**
+ * **Result page: http://euske.github.io/github-data-2014/index.html**
 
 Method
 ------
