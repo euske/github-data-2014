@@ -11,6 +11,9 @@ def q(s):
             replace('"','&#34;').
             replace("'",'&#39;'))
 
+def cap(w):
+    return w[0].upper()+w[1:]
+
 HEADERS = ('Word','Prefix','Suffix','Bigram')
 def listwords(tables,n=10):
     print '<table class=list>'
@@ -22,7 +25,25 @@ def listwords(tables,n=10):
     for row in zip(*tables)[:n]:
         r = [('<td class=order>%d.</td>' % i)]
         for (col,(w,n)) in enumerate(row):
-            r.append('<td class="col_%d word"><a href="javascript:void(0);" title="%d">%s</a></td>' % (col, n, q(w)))
+            r.append('<td class="col_%d word"><a href="javascript:void(0);" title="%d occurrences">%s</a></td>' % (col, n, q(w)))
+        print '<tr>%s</tr>' % ''.join(r)
+        i += 1
+    print '</table>'
+    return
+
+def listlang(langs,n=10):
+    print '<table class=list>'
+    print '<tr><th>#</th>'
+    names = [ name for (name,_) in langs ]
+    tables = [ d for (_,d) in langs ]
+    for name in names:
+        print '<th class=col_%s>%s</th>' % (name.lower(), name)
+    print '</tr>'
+    i = 1
+    for row in zip(*tables)[:n]:
+        r = [('<td class=order>%d.</td>' % i)]
+        for (name,(w,n)) in zip(names, row):
+            r.append('<td class="col_%s word"><a href="javascript:void(0);" title="%d occurrences">%s</a></td>' % (name.lower(), n, q(w)))
         print '<tr>%s</tr>' % ''.join(r)
         i += 1
     print '</table>'
@@ -41,10 +62,10 @@ def listphrases(verb,assoc,n=10):
         for (col,(w,n)) in zip(COLS,row):
             (w1,_,w2) = w.partition(' ')
             if col == 'phrase':
-                w = '%s %s.' % (w1[0].upper()+w1[1:], w2[0].upper()+w2[1:])
+                w = '%s %s.' % (cap(w1),cap(w2))
             else:
-                w = '%s, %s' % (w1,w2)
-            r.append('<td class="col_%s word"><a href="javascript:void(0);" title="%d">%s</a></td>' % (col, n, q(w)))
+                w = '%s, %s' % (cap(w1),cap(w2))
+            r.append('<td class="col_%s word"><a href="javascript:void(0);" title="%d occurrences">%s</a></td>' % (col, n, q(w)))
         print '<tr>%s</tr>' % ''.join(r)
         i += 1
     print '</table>'
@@ -60,7 +81,7 @@ def readlist(path):
             d[key] = []
         elif line:
             (n,_,w) = line.partition(' ')
-            d[key].append((w,int(n)))
+            d[key].append((cap(w),int(n)))
     fp.close()
     return d
 
@@ -72,12 +93,26 @@ def fmtpairs(words, fmt):
     return r
 
 def main(argv):
+    langs = []
+    for path in argv[1:]:
+        d = readlist(path)
+        if '-java.' in path:
+            name = 'Java'
+        elif '-c.' in path:
+            name = 'C'
+        elif '-py.' in path:
+            name = 'Python'
+        langs.append((name, d))
+
     print '''<html><head>
 <style><!--
 table.list { border: 2px gray solid; border-spacing: 0px; border-collapse: collapse; }
 .category { font-size: 100%; font-weight: bold; padding-bottom: 0.5em; }
-.nav { font-size: 80%; }    
-.col_0 { background: #ffddff; }
+.nav { font-size: 80%; }
+.col_java { background: #ddffff; }
+.col_python { background: #ffffdd; }
+.col_c { background: #ffddff; }
+.col_0 { background: #ffdddd; }
 .col_1 { background: #eeeeee; }
 .col_2 { background: #eeeeee; }
 .col_phrase { background: #ddffdd; }
@@ -93,16 +128,20 @@ td.word { border: 2px gray solid; padding: 0.2em; font-weight: bold; }
     print '<h1>Result: Quest for True Names</h1>'
     print '<p><a href="https://github.com/euske/github-data-2014">Project Repository</a>'
     print
-    for path in argv[1:]:
-        d = readlist(path)
-        if '-java.' in path:
-            name = 'Java'
-        elif '-c.' in path:
-            name = 'C'
-        elif '-py.' in path:
-            name = 'Python'
-        print '<h2>Top Names for %s</h2>' % name
-        print '<div class=nav>(Hover over a word to see the frequency.)</div>'
+    print '<h2>Comparison between Languages</h2>'
+    print '<h3>Which Word is Commonly Used for Names?</h3>'
+    print '<div class=nav>(Hover over a word to see the frequency.)</div>'
+    print '<table><tr><td class=tab>'
+    print '<div class=category>Variables</div>'
+    listlang([ (name, d['var_word']) for (name, d) in langs ])
+    print '</td><td class=tab><div class=category>Types/Classes</div>'
+    listlang([ (name, d['type_word']) for (name, d) in langs ])
+    print '</td><td class=tab><div class=category>Functions/Methods</div>'
+    listlang([ (name, d['func_word']) for (name, d) in langs ])
+    print '</td></tr></table>'
+    print
+    for (name, d) in langs:
+        print '<h2 class=col_%s>Top Words in %s</h2>' % (name,name)
         print '<table><tr>'
         print '<td class=tab><div class=category>Variable (<em>noun</em>)</div>'
         listwords((d['var_word'], d['var_prefix'], d['var_suffix'], d['var_bigram']))
@@ -120,6 +159,7 @@ td.word { border: 2px gray solid; padding: 0.2em; font-weight: bold; }
         print '</td>'
         print '</tr></table>'
         print
+    print '<hr><address>Yusuke Shinyama</address>'
     print '</body></html>'
     return 0
 
